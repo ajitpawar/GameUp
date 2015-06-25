@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+
+  <title>GameUp!</title>
+  <meta name="description" content="GameUp">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript"  src="js/app.js"></script> 
+</head>
+
+<body>
+  <div id="main">
+    <h1>GameUp!</h1>
+    <div id="mainapp">
+      <div class="content">
+          <header id="header"></header>
+          <div class="login">
+            <form class="login-form">
+              <h2>Log In</h2>
+              <div class="error" style="display:none"></div>
+              <input type="text" id="login-username" placeholder="Username">
+              <input type="password" id="login-password" placeholder="Password">
+              <button>Log In</button>
+            </form>
+
+            <form class="signup-form">
+              <h2>Sign Up</h2>
+              <div class="error" style="display:none"></div>
+              <input type="text" id="signup-username" placeholder="Username">
+              <input type="password" id="signup-password" placeholder="Create a Password">
+              <button>Sign Up</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Templates -->
+
+    <script type="text/template" id="login-template">
+      <header id="header"></header>
+      <div class="login">
+        <form class="login-form">
+          <h2>Log In</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <button>Log In</button>
+        </form>
+
+        <form class="signup-form">
+          <h2>Sign Up</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="signup-username" placeholder="Username" />
+          <input type="password" id="signup-password" placeholder="Create a Password" />
+          <button>Sign Up</button>
+        </form>
+      </div>
+    </script>
+
+</body>
+
+</html>
