@@ -15,10 +15,17 @@
 
 <body>
   <div id="main">
-    <h2>GameUp!</h2>
+    <h2>GameUp! - Create a New Event</h2>
 
-    <form action="create_event.html">
-      <input type="submit" value="Create Event">
+    <form>
+      <p>Name of Event: <input type="text" id="event-name" placeholder="Name of your Event" size=35></p>
+      <p>Location: <input type="text" id="event-location" placeholder="e.g., '123 Main St, Toronto'" size=35></p>
+      <p>Game: <select>
+        <option>These options</option>
+        <option>will need to be pulled</option>
+        <option>from Parse</option>
+        <option>the "Game" class</option>
+      </select> </p>
     </form>
   </div>
 
