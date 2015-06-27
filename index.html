@@ -37,14 +37,14 @@
   </div>
 
   <div ng-show="currentUser">
-    <div ng-view></div>
     <h1>GameUp!</h1>
     <h3>Welcome {{currentUser.get('username')}}</h3>
     <p> You have been successfully logged in</p>
-    <form action="views/create_event.html">
-      <input type="submit" value="Create Event">
-    </form>
-    <button ng-click="logOut(user)">Log out</button>
+    <ul>
+      <li><a href="#create_event">Create Event</a></li>
+      <li><button ng-click="logOut(user)">Log out</button></li>
+    </ul>
+    <div ng-view></div>
   </div>
 
   <!-- Modules -->

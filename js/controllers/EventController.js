@@ -1,6 +1,5 @@
-app.controller('EventController', ['$rootScope', function($scope){
+GameUpApp.controller('EventController', ['$rootScope', function($scope){
   $scope.createEvent = function(form){
-    alert("test");
     var EventObject = Parse.Object.extend("Event"); 
     var eventObject = new EventObject();
 

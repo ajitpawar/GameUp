@@ -1,8 +1,8 @@
 Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0DzWO8wDCSy8txlXsSUwcLZ");
 
-var app = angular.module('GameUpApp', ['ngRoute']);
+var GameUpApp = angular.module('GameUpApp', ['ngRoute']);
 
-app.run(['$rootScope', function($scope) {
+GameUpApp.run(['$rootScope', function($scope) {
   $scope.scenario = 'Log in';
   $scope.currentUser = Parse.User.current();
   
@@ -43,13 +43,10 @@ app.run(['$rootScope', function($scope) {
 }]);
 
 
-app.config(function ($routeProvider) { 
+GameUpApp.config(function ($routeProvider) { 
   $routeProvider 
     .when('/create_event', {
       controller: 'EventController',
       templateUrl: 'views/create_event.html'
-    })
-    .otherwise({
-      redirectTo: '/create_event'
     });
 });
