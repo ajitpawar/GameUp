@@ -1,46 +1,41 @@
-$(function() {
+Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0DzWO8wDCSy8txlXsSUwcLZ");
 
-  Parse.$ = jQuery;
-
-  // Initialize Parse with your Parse application javascript keys
-  Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0DzWO8wDCSy8txlXsSUwcLZ");
-
-  $('.signup-form button').click(createUser);
-  $('.login-form button').click(loginUser);
-
-  function createUser(){
+angular.module('AuthApp', [])
+.run(['$rootScope', function($scope) {
+  $scope.scenario = 'Sign up';
+  $scope.currentUser = Parse.User.current();
+  
+  $scope.signUp = function(form) {
     var user = new Parse.User();
-    var username = $('#signup-username').val();
-    var password = $('#signup-password').val();
-    user.set("username", username);
-    user.set("password", password);
-
+    user.set("email", form.email);
+    user.set("username", form.username);
+    user.set("password", form.password);
+    
     user.signUp(null, {
       success: function(user) {
-        window.location.href="home.html"; 
+        $scope.currentUser = user;
+        $scope.$apply();
       },
       error: function(user, error) {
-        // Show the error message somewhere and let the user try again.
-        alert("Error: " + error.code + " " + error.message);
+        alert("Unable to sign up:  " + error.code + " " + error.message);
       }
-    });
-
-    return false;
-  }
-
-  function loginUser(){
-    var username = $('#login-username').val();
-    var password = $('#login-password').val();
-
-    Parse.User.logIn(username, password, {
+    });    
+  };
+  
+  $scope.logIn = function(form) {
+    Parse.User.logIn(form.username, form.password, {
       success: function(user) {
-        window.location.href="home.html";  
+        $scope.currentUser = user;
+        $scope.$apply();
       },
       error: function(user, error) {
-        alert("Error: " + error.code + " " + error.message);
+        alert("Unable to log in: " + error.code + " " + error.message);
       }
     });
-
-    return false;
-  }
-});
+  };
+  
+  $scope.logOut = function(form) {
+    Parse.User.logOut();
+    $scope.currentUser = null;
+  };
+}]);
