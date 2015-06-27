@@ -37,40 +37,14 @@
   </div>
   
   <div ng-show="currentUser">
-    <h1>Welcome {{currentUser.get('username')}}</h1>
+    <h1>GameUp!</h1>
+    <h3>Welcome {{currentUser.get('username')}}</h3>
     <p> You have been successfully logged in</p>
     <button ng-click="logOut(user)">Log out</button>
   </div>
 
-
 <!-- Modules -->
 <script src="js/app.js"></script>
-
-<!-- Templates -->
-
-<script type="text/template" id="login-template">
-  
-  <header id="header"></header>
-  <div class="login">
-    <form class="login-form">
-      <h2>Log In</h2>
-      <div class="error" style="display:none"></div>
-      <input type="text" id="login-username" placeholder="Username" />
-      <input type="password" id="login-password" placeholder="Password" />
-      <button>Log In</button>
-    </form>
-
-    <form class="signup-form">
-      <h2>Sign Up</h2>
-      <div class="error" style="display:none"></div>
-      <input type="text" id="signup-username" placeholder="Username" />
-      <input type="password" id="signup-password" placeholder="Create a Password" />
-      <button>Sign Up</button>
-    </form>
-  </div>
-</script>
-
-
 
 </body>
 
