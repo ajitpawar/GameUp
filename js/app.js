@@ -1,8 +1,9 @@
 Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0DzWO8wDCSy8txlXsSUwcLZ");
 
-angular.module('AuthApp', [])
-.run(['$rootScope', function($scope) {
-  $scope.scenario = 'Sign up';
+var GameUpApp = angular.module('GameUpApp', ['ngRoute']);
+
+GameUpApp.run(['$rootScope', function($scope) {
+  $scope.scenario = 'Log in';
   $scope.currentUser = Parse.User.current();
   
   $scope.signUp = function(form) {
@@ -37,5 +38,23 @@ angular.module('AuthApp', [])
   $scope.logOut = function(form) {
     Parse.User.logOut();
     $scope.currentUser = null;
+    window.location.href = '/';
   };
+
 }]);
+
+
+GameUpApp.config(function ($routeProvider) { 
+  $routeProvider 
+    .when('/', {
+      controller: 'HomeController',
+      templateUrl: '/views/home.html'
+    })
+    .when('/create_event', {
+      controller: 'EventController',
+      templateUrl: 'views/create_event.html'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+});
