@@ -37,21 +37,16 @@
   </div>
 
   <div ng-show="currentUser">
-    <h1>GameUp!</h1>
-    <h3>Welcome {{currentUser.get('username')}}</h3>
-    <p> You have been successfully logged in</p>
-    <ul>
-      <li><a href="#create_event">Create Event</a></li>
-      <li><button ng-click="logOut(user)">Log out</button></li>
-    </ul>
     <div ng-view></div>
   </div>
+
 
   <!-- Modules -->
   <script src="js/app.js"></script>
 
   <!-- Controllers -->
   <script src="js/controllers/EventController.js"></script> 
+  <script src="js/controllers/HomeController.js"></script> 
 
 </body>
 

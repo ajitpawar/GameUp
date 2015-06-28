@@ -1,9 +1,10 @@
 <div id="main">
-  <h2>GameUp! - Create a New Event</h2>
+  <h1>GameUp!</h1>
+  <h2>Create a New Event</h2>
 
-  <form ng-controller="EventController">
+  <form name="eventCreateForm" ng-controller="EventController">
     <p>Name of Event: <input type="text" ng-model="eventObject.eventname" placeholder="Name of your Event" size=35></p>
-    <!-- <p>Location: <input type="text" ng-model="eventObject.eventlocation" placeholder="e.g., '123 Main St, Toronto'" size=35></p> -->
+    <p>Location: <input type="text" ng-model="eventObject.eventlocation" placeholder="e.g., '123 Main St, Toronto'" size=35></p>
     <p>Game: <select>
       <option>These options</option>
       <option>will need to be pulled</option>
@@ -11,5 +12,9 @@
       <option>the "Game" class</option>
     </select> </p>
     <button ng-click="createEvent(eventObject)">Submit</button>
+    <ul>
+      <li><a href="#create_event">Create Event</a></li>
+      <li><button ng-click="logOut(user)">Log out</button></li>
+    </ul>
   </form>
 </div>

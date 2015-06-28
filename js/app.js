@@ -38,6 +38,7 @@ GameUpApp.run(['$rootScope', function($scope) {
   $scope.logOut = function(form) {
     Parse.User.logOut();
     $scope.currentUser = null;
+    window.location.href = '/';
   };
 
 }]);
@@ -45,8 +46,15 @@ GameUpApp.run(['$rootScope', function($scope) {
 
 GameUpApp.config(function ($routeProvider) { 
   $routeProvider 
+    .when('/', {
+      controller: 'HomeController',
+      templateUrl: '/views/home.html'
+    })
     .when('/create_event', {
       controller: 'EventController',
       templateUrl: 'views/create_event.html'
+    })
+    .otherwise({
+      redirectTo: '/'
     });
 });
