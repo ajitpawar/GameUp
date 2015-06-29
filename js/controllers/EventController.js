@@ -4,7 +4,11 @@ GameUpApp.controller('EventController', ['$scope', function($scope){
     var eventObject = new EventObject();
 
     eventObject.set("eventName", form.eventname);
-    //eventObject.set("eventLocation", form.eventlocation);
+    eventObject.set("eventLocation", form.eventlocation);
+    eventObject.set("eventDate", form.eventdate);
+    eventObject.set("eventTime", form.eventtime);
+    eventObject.set("eventPrice", form.eventprice);
+    eventObject.set("eventDescription", form.eventdescription);
 
     eventObject.save(null, {
       success: function(eventObject){
@@ -15,6 +19,13 @@ GameUpApp.controller('EventController', ['$scope', function($scope){
         alert('Error when saving: ' + error.message);
       }
     });
+  };
+
+  $scope.retrieveGameList = function(){
+    var Games = Parse.Object.extend("Game");
+    var query = new Parse.Query(Games);
+
+    //TODO: retrieve list of games from Parse and load them into the Game type drop-down list
   };
 
 }]);
