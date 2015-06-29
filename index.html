@@ -1,58 +1,54 @@
 <!DOCTYPE html>
+<html ng-app="GameUpApp">
 <head>
   <meta charset="utf-8">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>GameUp!</title>
-  <meta name="description" content="GameUp">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- general -->
-  <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-  <!-- angular -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
-  <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
-
-  <!-- 3rd party -->
-  <script type="text/javascript" src="libraries/parse-angular.js"></script>
-  <script type="text/javascript" src="libraries/satellizer.min.js"></script>
-
+  <link href="assets/img/favicon.png" rel="shortcut icon">
+  <link href="http://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"> -->
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 
-<body ng-app="GameUpApp">
-  <div ng-hide="currentUser">
-    <form ng-show="scenario == 'Sign up'">
-      <h2>Sign up</h2>
-      Username: <input type="text" ng-model="user.username" /><br />
-      Password: <input type="password" ng-model="user.password" /><br />
-      <button ng-click="signUp(user)">Sign up</button>
-      or <a href="#" ng-click='scenario="Log in"'>Log in</a>
-    </form>
-
-    <form ng-show="scenario == 'Log in'">
-      <h2>Log in</h2>
-      Username: <input type="text" ng-model="user.username" /><br />
-      Password: <input type="password" ng-model="user.password" /><br />
-      <button ng-click="logIn(user)">Log in</button>
-      or <a href="#" ng-click='scenario="Sign up"'>Sign up</a>
-    </form>
+<body>
+<div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> GameUp!</a>
   </div>
+  <ul class="nav navbar-nav">
+    <li><a href="#/home">Home</a></li>
+    <!-- <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li> -->
+  </ul>
+  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/signup">Sign up</a></li>
+  </ul>
+  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+    <li><a href="#/logout">Logout</a></li>
+  </ul>
+</div>
 
-  <div ng-show="currentUser">
-    <div ng-view></div>
-  </div>
+<div ng-view></div>
+
+<!-- angular -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-route.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-messages.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-resource.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-animate.min.js"></script>
 
 
-  <!-- Modules -->
-  <script src="app/app.js"></script>
+<!-- 3rd party -->
+<script src="vendor/satellizer.js"></script>
+<script src="vendor/parse-angular.js"></script>
 
-  <!-- Controllers -->
-  <script src="assets/controllers/EventController.js"></script>
-  <script src="assets/controllers/HomeController.js"></script>
-
+<!-- code -->
+<script src="app/app.js"></script>
+<script src="app/controllers/navbar.js"></script>
+<script src="app/controllers/EventController.js"></script>
+<script src="app/controllers/HomeController.js"></script>
 </body>
-
 </html>

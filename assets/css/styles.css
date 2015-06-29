@@ -1,109 +1,75 @@
 body {
-    background: #eee;
-    text-align: center;
-    padding: 0 25px;
+  font-family: 'Open Sans', sans-serif;
+  background: #e4e7ec;
 }
 
-#main {
-    width: 500px;
-    margin: auto;
-    text-align: left;
-    background: white;
-    padding: 50px 60px;
-    border: solid #ddd;
-    border-width: 0 1px 1px 1px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
-#main h1 {
-    margin-top: 0;
-    font-size: 35px;
+a {
+  color: #000;
 }
 
-#main ul {
-    padding-left: 20px;
+.text-muted {
+  color: #90939a;
 }
 
-#main .error {
-    border: 1px solid red;
-    background: #FDEFF0;
-    padding: 20px;
+.navbar {
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
 }
 
-#main .success {
-    margin-top: 25px;
+.navbar-header {
+  float: left;
+  padding-left: 15px;
 }
 
-#main .success code {
-    font-size: 12px;
-    color: green;
-    line-height: 13px;
+.navbar-nav {
+  float: left;
+  margin: 0;
 }
 
-#mainapp {
-    background: #fff;
-    background: rgba(255, 255, 255, 0.9);
-    margin: 10px 0 10px 0;
-    border: 1px solid #ccc;
-    position: relative;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
-    0 25px 50px 0 rgba(0, 0, 0, 0.15);
+.navbar-nav > li {
+  float: left;
 }
 
-.content .login {
-    width: 350px;
-    margin: 45px auto 25px auto;
+.navbar-nav > li > a {
+  padding: 15px;
 }
 
-.content .login h2 {
-    font-weight: normal;
-    font-size: 25px;
-    margin-bottom: 20px;
+.navbar-default {
+  color: #fff;
+  background: #fff;
 }
 
-.content .login input {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 20px;
-    padding: 5px;
-    width: 340px;;
+.navbar-default .navbar-brand {
+  color: #333;
+  background-color: #ffe939;
 }
 
-.content .login .signup-form {
-    margin-top: 25px;
+.navbar-default .navbar-brand:hover {
+  color: #ffe939;
+  background-color: #333;
 }
 
-.content .login button {
-    padding: 5px 10px;
-    background: #eee;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 25px;
-    font-family: "Helvetica Neue";
+.navbar-brand {
+  margin-left: -15px;
+  transition: 0.25s all;
 }
 
-.content .login .error {
-    border: 1px solid red;
-    background: #FDEFF0;
-    padding: 5px 15px;
-    margin-bottom: 15px;
+.panel {
+  border-color: #cfd9D7;
+  border-radius: 2px;
+  box-shadow: 0 8px 17px rgba(0, 0, 0, .2);
 }
 
-.content #user-info {
-    padding: 5px 10px;
-    border-top: 1px solid #ededed;
-    margin-bottom: 0px;
-    text-align: right;
+.panel-default > .panel-heading {
+  font-size: 85%;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  background-color: #f6f6f6;
+  border-color: #cfd9db;
 }
-
-.content .mark-all-done {
-    margin-left: 8px;
-}
-
-
-
-
-
-
