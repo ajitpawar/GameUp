@@ -3,14 +3,12 @@ Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0
 var GameUpApp = angular.module('GameUpApp', ['ngRoute']);
 
 GameUpApp.run(['$rootScope', function($scope) {
-  $scope.scenario = 'Log in';
   $scope.currentUser = Parse.User.current();
   
   $scope.signUp = function(form) {
     var user = new Parse.User();
-    user.set("email", form.email);
-    user.set("username", form.username);
-    user.set("password", form.password);
+    user.set("username", form.signup_username);
+    user.set("password", form.signup_password);
     
     user.signUp(null, {
       success: function(user) {
@@ -24,7 +22,7 @@ GameUpApp.run(['$rootScope', function($scope) {
   };
   
   $scope.logIn = function(form) {
-    Parse.User.logIn(form.username, form.password, {
+    Parse.User.logIn(form.login_username, form.login_password, {
       success: function(user) {
         $scope.currentUser = user;
         $scope.$apply();

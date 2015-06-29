@@ -19,20 +19,18 @@
 
 <body ng-app="GameUpApp">
   <div ng-hide="currentUser">
-    <form ng-show="scenario == 'Sign up'">
+    <form>
       <h2>Sign up</h2>
-      Username: <input type="text" ng-model="user.username" /><br />
-      Password: <input type="password" ng-model="user.password" /><br />
+      Username: <input type="text" ng-model="user.signup_username" /><br />
+      Password: <input type="password" ng-model="user.signup_password" /><br />
       <button ng-click="signUp(user)">Sign up</button>
-      or <a href="#" ng-click='scenario="Log in"'>Log in</a>
     </form>
     
-    <form ng-show="scenario == 'Log in'">
+    <form>
       <h2>Log in</h2>
-      Username: <input type="text" ng-model="user.username" /><br />
-      Password: <input type="password" ng-model="user.password" /><br />
+      Username: <input type="text" ng-model="user.login_username" /><br />
+      Password: <input type="password" ng-model="user.login_password" /><br />
       <button ng-click="logIn(user)">Log in</button>
-      or <a href="#" ng-click='scenario="Sign up"'>Sign up</a>
     </form>
   </div>
 
