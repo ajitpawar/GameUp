@@ -1,8 +1,10 @@
-var GameUpApp = angular.module('GameUpApp', ['ngResource', 'ngRoute', 'ngMessages', 'satellizer']);
+Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0DzWO8wDCSy8txlXsSUwcLZ");
+
+var GameUpApp = angular.module('GameUpApp', ['ngResource', 'ngRoute', 'ngMessages', 'satellizer', 'parse-angular']);
 
 GameUpApp.config(function($routeProvider) {
     $routeProvider
-    .when('/home', {
+    .when('/', {
       controller: 'HomeController',
       templateUrl: 'app/views/home.html'
     })

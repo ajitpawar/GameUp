@@ -1,24 +1,11 @@
-GameUpApp.controller('EventController', ['$scope', function($scope){
+GameUpApp.controller('EventController', ['$scope', '$location', 'events', function($scope, $location, events){
   $scope.createEvent = function(form){
-    var EventObject = Parse.Object.extend("Event");
-    var eventObject = new EventObject();
-
-    eventObject.set("eventName", form.eventname);
-    eventObject.set("eventLocation", form.eventlocation);
-    eventObject.set("eventDate", form.eventdate);
-    eventObject.set("eventTime", form.eventtime);
-    eventObject.set("eventPrice", form.eventprice);
-    eventObject.set("eventDescription", form.eventdescription);
-
-    eventObject.save(null, {
-      success: function(eventObject){
-        alert("Event successfully created!");
-        //TODO: clear form.
-      },
-      error: function(eventObject, error){
-        alert('Error when saving: ' + error.message);
-      }
-    });
+    events.create(form)
+      .then(function(){
+        $location.path('/');
+      }, function(){
+        $scope.error = "There was an error when saving your event.";
+      })
   };
 
   $scope.retrieveGameList = function(){
