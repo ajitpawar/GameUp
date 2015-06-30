@@ -3,24 +3,63 @@
     <div class="panel-heading">Create Event</div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-8">
           <div ng-if = "error" class="error">{{error}}</div>
-          <h2>Create Event</h2>
-          <form name="eventCreateForm">
-            <p>Name of Event: <input type="text" ng-model="eventObject.eventname" placeholder="Name of your Event" size=35></p>
-            <p>Location: <input type="text" ng-model="eventObject.eventlocation" placeholder="e.g., '123 Main St, Toronto'" size=35></p>
-            <p>Date: <input type="date" ng-model="eventObject.eventdate"></p>
-            <p>Time: <input type="time" ng-model="eventObject.eventtime"></p>
-            <p>Game: <select>
-              <option>These options</option>
-              <option>will need to be pulled</option>
-              <option>from Parse</option>
-              <option>the "Game" class</option>
-            </select> </p>
-            <p>Price: $<input type="number" ng-model="eventObject.eventprice"></p>
-            Event Description:<textarea rows="6" cols="50" ng-model="eventObject.eventdescription">Enter description here</textarea>
-            <p><button ng-click="createEvent(eventObject)">Submit</button></p>
-          </form>
+          <!-- panel preview -->
+          <div class="col-sm-12">
+              <h4>Create Event</h4>
+              <div class="panel panel-default">
+                  <div class="panel-body form-horizontal payment-form">
+                      <div class="form-group">
+                          <label for="name" class="col-sm-3 control-label">Event Name</label>
+                          <div class="col-sm-9">
+                              <input ng-model="eventObject.eventname" type="text" class="form-control" id="name" name="name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="location" class="col-sm-3 control-label">Location</label>
+                          <div class="col-sm-9">
+                              <input ng-model="eventObject.eventlocation" type="text" class="form-control" id="location" name="location">
+                          </div>
+                      </div> 
+                      <div class="form-group">
+                          <label for="price" class="col-sm-3 control-label">Price</label>
+                          <div class="col-sm-9">
+                              <input ng-model="eventObject.eventprice" type="number" class="form-control" id="price" name="price">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="game" class="col-sm-3 control-label">Game</label>
+                          <div class="col-sm-9">
+                              <select class="form-control" id="game" name="game">
+                                  <option>Game1</option>
+                                  <option>Game2</option>
+                                  <option>Game3</option>
+                              </select>
+                          </div>
+                      </div> 
+                      <div class="form-group">
+                          <label for="date" class="col-sm-3 control-label">Date</label>
+                          <div class="col-sm-4">
+                              <input ng-model="eventObject.eventdate" type="date" class="form-control" id="date" name="date">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="time" class="col-sm-3 control-label">Time</label>
+                          <div class="col-sm-4">
+                              <input ng-model="eventObject.eventtime" type="time" class="form-control" id="time" name="time">
+                          </div>
+                      </div>    
+                      <div class="form-group">
+                          <label for="description" class="col-sm-3 control-label">Description</label>
+                          <div class="col-sm-9">
+                              <textarea ng-model="eventObject.eventdescription" rows="6" cols="50"></textarea>
+                          </div>
+                      </div>
+                      <p><button ng-click="createEvent(eventObject)">Submit</button></p> 
+                  </div>
+              </div>            
+          </div> <!-- / panel preview -->
         </div>
         </div>
       </div>
