@@ -1,21 +1,29 @@
-<div id="main">
-  <h1>GameUp!</h1>
-  <h2>Create a New Event</h2>
-  <div ng-if = "error" class="error">{{error}}</div>
-  <form name="eventCreateForm">
-    <p>Name of Event: <input type="text" ng-model="eventObject.eventname" placeholder="Name of your Event" size=35></p>
-    <p>Location: <input type="text" ng-model="eventObject.eventlocation" placeholder="e.g., '123 Main St, Toronto'" size=35></p>
-    <p>Date: <input type="date" ng-model="eventObject.eventdate"></p>
-    <p>Time: <input type="time" ng-model="eventObject.eventtime"></p>
-    <p>Game: <select>
-      <option>These options</option>
-      <option>will need to be pulled</option>
-      <option>from Parse</option>
-      <option>the "Game" class</option>
-    </select> </p>
-    <p>Price: $<input type="number" ng-model="eventObject.eventprice"></p>
-    Event Description:<textarea rows="6" cols="50" ng-model="eventObject.eventdescription">Enter description here</textarea>
-    <p><button ng-click="createEvent(eventObject)">Submit</button></p>
-  </form>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Create Event</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div ng-if = "error" class="error">{{error}}</div>
+          <h2>Create Event</h2>
+          <form name="eventCreateForm">
+            <p>Name of Event: <input type="text" ng-model="eventObject.eventname" placeholder="Name of your Event" size=35></p>
+            <p>Location: <input type="text" ng-model="eventObject.eventlocation" placeholder="e.g., '123 Main St, Toronto'" size=35></p>
+            <p>Date: <input type="date" ng-model="eventObject.eventdate"></p>
+            <p>Time: <input type="time" ng-model="eventObject.eventtime"></p>
+            <p>Game: <select>
+              <option>These options</option>
+              <option>will need to be pulled</option>
+              <option>from Parse</option>
+              <option>the "Game" class</option>
+            </select> </p>
+            <p>Price: $<input type="number" ng-model="eventObject.eventprice"></p>
+            Event Description:<textarea rows="6" cols="50" ng-model="eventObject.eventdescription">Enter description here</textarea>
+            <p><button ng-click="createEvent(eventObject)">Submit</button></p>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
