@@ -1,0 +1,160 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #e4e7ec;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  color: #000;
+}
+
+.text-muted {
+  color: #90939a;
+}
+
+.navbar {
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+}
+
+.navbar-header {
+  float: left;
+  padding-left: 15px;
+}
+
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+
+.navbar-nav > li {
+  float: left;
+}
+
+.navbar-nav > li > a {
+  padding: 15px;
+}
+
+.navbar-default {
+  color: #fff;
+  background: #fff;
+}
+
+.navbar-default .navbar-brand {
+  color: #333;
+  background-color: #ffe939;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #ffe939;
+  background-color: #333;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+  transition: 0.25s all;
+}
+
+.panel {
+  border-color: #cfd9D7;
+  border-radius: 2px;
+  box-shadow: 0 8px 17px rgba(0, 0, 0, .2);
+}
+
+.panel-default > .panel-heading {
+  font-size: 85%;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  background-color: #f6f6f6;
+  border-color: #cfd9db;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.center-form {
+  width: 330px;
+  margin: 12% auto;
+}
+
+.signup-or-separator {
+  position: relative;
+  height: 34px;
+  text-align: center;
+  background: none;
+}
+
+.signup-or-separator hr {
+  width: 90%;
+  margin: -16px auto 10px auto;
+  border-top: 1px solid #dce0e0;
+}
+
+.signup-or-separator .text {
+  display: inline-block;
+  padding: 8px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.has-feedback .form-control-feedback {
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  color: #555;
+}
+
+.password-strength-indicator {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 5px;
+  padding: 0 15px;
+}
+
+.password-strength-indicator span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  margin-bottom: 2px;
+  background: #ebeef1;
+  border-radius: 5px;
+}
+
+[class^='ion-'] {
+  font-size: 1.2em;
+}
+
+.has-feedback .form-control {
+  padding-left: 42.5px;
+}
+
+.alert-material {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  display: inline-block;
+  min-height: 48px;
+  padding: 13px 24px 12px;
+  font-family: 'Roboto', sans-serif;
+  color: #f1f1f1;
+  cursor: default;
+  background: #323232;
+  border-radius: 2px;
+  outline: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.profile-picture {
+  height: 100px;
+  display: block;
+}
