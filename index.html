@@ -21,14 +21,14 @@
   </div>
   <ul class="nav navbar-nav">
     <li><a href="#/home">Home</a></li>
-    <!-- <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li> -->
+    <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li>
   </ul>
   <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
     <li><a href="#/login">Login</a></li>
     <li><a href="#/signup">Sign up</a></li>
   </ul>
   <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="#/logout">Logout</a></li>
+    <li><a href="#" ng-click="logOut()">Logout</a></li>
   </ul>
 </div>
 
@@ -59,6 +59,7 @@
 <script src="app/controllers/NavbarController.js"></script>
 <script src="app/controllers/EventController.js"></script>
 <script src="app/controllers/LoginController.js"></script>
+<!-- <script src="app/controllers/LogoutController.js"></script> -->
 
 </body>
 </html>

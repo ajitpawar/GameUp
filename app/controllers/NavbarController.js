@@ -1,6 +1,8 @@
 angular.module('GameUpApp')
-  .controller('NavbarController', function($scope, $auth) {
+  .controller('NavbarController', function($scope) {
     $scope.isAuthenticated = function() {
-      return $auth.isAuthenticated();
+    	if ($scope.currentUser === null)
+	      return false;
+	 	return true;
     };
   });
