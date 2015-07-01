@@ -10,7 +10,6 @@ GameUpApp.run(['$rootScope', function($scope) {
     Parse.User.logOut();
     $scope.currentUser = null;
     console.log("logged out!");
-    window.location.href = '/';
   };
 
 }]);
@@ -33,6 +32,10 @@ GameUpApp.config(function($routeProvider) {
     .when('/signup', {
       controller: 'SignupController',
       templateUrl: 'app/views/signup.html'
+    })
+    .when('/profile', {
+      controller: 'ProfileController',
+      templateUrl: 'app/views/profile.html'
     })
     .otherwise({
       redirectTo: '/'

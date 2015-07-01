@@ -22,6 +22,7 @@
   <ul class="nav navbar-nav">
     <li><a href="#/home">Home</a></li>
     <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li>
+    <li><a href="#/create_event">Create</a></li>
   </ul>
   <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
     <li><a href="#/login">Login</a></li>
@@ -60,6 +61,7 @@
 <script src="app/controllers/EventController.js"></script>
 <script src="app/controllers/LoginController.js"></script>
 <script src="app/controllers/SignupController.js"></script>
+<script src="app/controllers/ProfileController.js"></script>
 
 </body>
 </html>

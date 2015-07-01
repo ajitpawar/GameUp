@@ -7,8 +7,8 @@
           <div ng-if = "error" class="error">{{error}}</div>
           <!-- panel preview -->
           <div class="col-sm-12">
-              <h4>Create Event</h4>
-              <div class="panel panel-default">
+              <!-- <h4>Create Event</h4> -->
+              <!-- <div class="panel panel-default"> -->
                   <div class="panel-body form-horizontal payment-form">
                       <div class="form-group">
                           <label for="name" class="col-sm-3 control-label">Event Name</label>
@@ -21,7 +21,7 @@
                           <div class="col-sm-9">
                               <input ng-model="eventObject.eventlocation" type="text" class="form-control" id="location" name="location">
                           </div>
-                      </div> 
+                      </div>
                       <div class="form-group">
                           <label for="price" class="col-sm-3 control-label">Price</label>
                           <div class="col-sm-9">
@@ -37,7 +37,7 @@
                                   <option>Game3</option>
                               </select>
                           </div>
-                      </div> 
+                      </div>
                       <div class="form-group">
                           <label for="date" class="col-sm-3 control-label">Date</label>
                           <div class="col-sm-4">
@@ -49,16 +49,16 @@
                           <div class="col-sm-4">
                               <input ng-model="eventObject.eventtime" type="time" class="form-control" id="time" name="time">
                           </div>
-                      </div>    
+                      </div>
                       <div class="form-group">
                           <label for="description" class="col-sm-3 control-label">Description</label>
                           <div class="col-sm-9">
                               <textarea ng-model="eventObject.eventdescription" rows="6" cols="50"></textarea>
                           </div>
                       </div>
-                      <p><button ng-click="createEvent(eventObject)">Submit</button></p> 
+                      <p><button ng-click="createEvent(eventObject)">Submit</button></p>
                   </div>
-              </div>            
+              <!-- </div> -->
           </div> <!-- / panel preview -->
         </div>
         </div>
