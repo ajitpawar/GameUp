@@ -9,7 +9,7 @@ GameUpApp.controller('LoginController', ['$scope', '$rootScope', '$location', fu
   	}
 
   	function loginFailure(user, error) {
-   		console.log("Error: " + error.message + " (" + error.code + ")");
+   		alert("Error: " + error.message + " (" + error.code + ")");
   	}
 
     $scope.login = function() {

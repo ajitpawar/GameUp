@@ -4,10 +4,10 @@
       <div class="panel-body">
         <h2 class="text-center">Sign up</h2>
         <form method="post" ng-submit="signup()" name="signupForm">
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-            <input class="form-control input-lg" type="text" name="displayName" ng-model="displayName" placeholder="Name" required autofocus>
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.username.$invalid && signupForm.username.$dirty }">
+            <input class="form-control input-lg" type="text" name="username" ng-model="username" placeholder="Username" required autofocus>
             <span class="ion-person form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+            <div class="help-block text-danger" ng-if="signupForm.username.$dirty" ng-messages="signupForm.username.$error">
               <div ng-message="required">You must enter your name.</div>
             </div>
           </div>
