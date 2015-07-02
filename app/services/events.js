@@ -10,6 +10,14 @@ GameUpApp.factory('events', ['$q', function($q){
     eventObject.set("eventLocation", event.eventlocation);
     eventObject.set("eventDate", event.eventdate);
     eventObject.set("eventTime", event.eventtime);
+    
+    // BUG
+    // This is failing because the parse backend expects a Pointer to a game,
+    // and instead it is recieving a string.
+    
+    /* HOW TO SAVE A POINTER TO A GAME OBJECT??*/
+    //eventObject.set("eventGame", event.eventgame);
+
     eventObject.set("eventPrice", event.eventprice);
     eventObject.set("eventDescription", event.eventdescription);
 
@@ -20,6 +28,24 @@ GameUpApp.factory('events', ['$q', function($q){
 
     return deferred.promise;
   };
+
+  service.getGamesList = function(){
+    // var deferred = $q.defer();
+    var gamesList = [];
+    var query = new Parse.Query("Game");
+
+    query.each(function(result){
+      debugger;
+      gamesList.push(
+        {
+          gameTitle: result.attributes.Name
+        });
+    });
+    // deferred.resolve;
+    // return deferred.promise;
+    return gamesList;
+
+  }
 
   return service;
 }]);
