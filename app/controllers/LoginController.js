@@ -3,7 +3,6 @@ GameUpApp.controller('LoginController', ['$scope', '$rootScope', '$location', fu
   	function loginSuccess(user) {
 	    $rootScope.$apply(function() {
 	      $rootScope.currentUser = Parse.User.current();
-	      console.log("logged in!");
 	      $location.path("/");
 	    });
   	}
