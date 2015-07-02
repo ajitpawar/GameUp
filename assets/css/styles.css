@@ -1,3 +1,11 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background: #e4e7ec;
@@ -157,4 +165,35 @@ a {
 .profile-picture {
   height: 100px;
   display: block;
+}
+
+.event-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.event-search {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+  padding-bottom: 30px;
+}
+
+.event {
+  display: block;
+  color: white;
+  background: #2c3e50;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 2px #888888;
+}
+
+.event-detail {
+  margin-bottom: 10px;
+}
+
+.event-detail-text {
+  font-size: 26px;
+  margin-right: 15px;
+  margin-left: 5px;
 }
