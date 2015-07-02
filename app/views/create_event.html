@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">Create Event</div>
@@ -8,7 +9,7 @@
           <!-- panel preview -->
           <div class="col-sm-12">
               <!-- <h4>Create Event</h4> -->
-              <!-- <div class="panel panel-default"> -->
+              <div ng-controller="EventController">
                   <div class="panel-body form-horizontal payment-form">
                       <div class="form-group">
                           <label for="name" class="col-sm-3 control-label">Event Name</label>
@@ -31,10 +32,7 @@
                       <div class="form-group">
                           <label for="game" class="col-sm-3 control-label">Game</label>
                           <div class="col-sm-9">
-                              <select class="form-control" id="game" name="game">
-                                  <option>Game1</option>
-                                  <option>Game2</option>
-                                  <option>Game3</option>
+                              <select ng-model="eventObject.eventgame" ng-options="game.gameTitle for game in allGames" class="form-control" id="game" name="game" required>
                               </select>
                           </div>
                       </div>
@@ -58,7 +56,7 @@
                       </div>
                       <p><button ng-click="createEvent(eventObject)">Submit</button></p>
                   </div>
-              <!-- </div> -->
+              </div>
           </div> <!-- / panel preview -->
         </div>
         </div>
