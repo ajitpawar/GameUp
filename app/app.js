@@ -37,6 +37,10 @@ GameUpApp.config(function($routeProvider) {
       controller: 'ProfileController',
       templateUrl: 'app/views/profile.html'
     })
+    .when('/events', {
+      controller: 'ListEventsController',
+      templateUrl: 'app/views/events.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
