@@ -11,57 +11,24 @@
       <div class="row">
         <div class="twelve columns">
           <div class="events-teasers">
-            <div class="event-teaser" data-event-id="2659">
-              <div class="two columns time">
-                <i class="icon-time"></i>
-                &nbsp;
-                Today
-              </div>
-              <div class="one columns logo">
-                <a href="/testing-event" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
-              </div>
-              <div class="seven columns description">
-                <h4><a href="/testing-event">Testing Event</a></h4>
-                <h5><a href="/testing-event">Preliminary </a></h5>
-              </div>
-              <div class="two columns location">
-              </div>
-            </div>
 
-            <div class="event-teaser" data-event-id="2651">
+            <div class="event-teaser" ng-repeat="obj in promotedEventList[0]">
               <div class="two columns time">
                 <i class="icon-time"></i>
                 &nbsp;
-                Tomorrow
+                {{obj.attributes.eventDate | date: 'shortDate'}}
               </div>
               <div class="one columns logo">
-                <a href="/breakthrough-hk-rise" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
+                <i class="fa fa-gamepad fa-2x"></i>
               </div>
               <div class="seven columns description">
-                <h4><a href="/breakthrough-hk-rise">Breakthrough HK@RISE – Preliminary</a></h4>
-                <h5><a href="/breakthrough-hk-rise">Breakthrough HK@RISE – Preliminary</a></h5>
+                <h4>{{obj.attributes.eventName}}</h4>
+                <h5>{{obj.attributes.eventDescription}}</h5>
               </div>
               <div class="two columns location">
-              </div>
-            </div>
-
-            <div class="event-teaser" data-event-id="2653">
-              <div class="two columns time">
-                <i class="icon-time"></i>
-                &nbsp;
-                Tomorrow
-              </div>
-              <div class="one columns logo">
-                <a href="/rise" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
-              </div>
-              <div class="seven columns description">
-                <h4><a href="/rise">RISE</a></h4>
-                <h5><a href="/rise"></a></h5>
-              </div>
-              <div class="two columns location">
-                <a href="http://www.hackathon.io/events?location=Hong+Kong"><i class="icon-map-marker"></i>
+                <i class="icon-map-marker"></i>
                   &nbsp;
-                  Hong Kong
+                  {{obj.attributes.eventLocation}}
                 </a></div>
               </div>
 
