@@ -1,7 +1,246 @@
-<div class='event-container container-fluid'>
+<div id="events-directory">
+  <div class="blue-bg">
+    <div class="hero events-hero">
+      <div class="row">
+        <div class="twelve columns centered">
+          <div class="intro type-centered">
+            <div class="title type-caps no-border">Featured Gaming Events</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <div class="events-teasers">
+            <div class="event-teaser" data-event-id="2659">
+              <div class="two columns time">
+                <i class="icon-time"></i>
+                &nbsp;
+                Today
+              </div>
+              <div class="one columns logo">
+                <a href="/testing-event" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
+              </div>
+              <div class="seven columns description">
+                <h4><a href="/testing-event">Testing Event</a></h4>
+                <h5><a href="/testing-event">Preliminary </a></h5>
+              </div>
+              <div class="two columns location">
+              </div>
+            </div>
+
+            <div class="event-teaser" data-event-id="2651">
+              <div class="two columns time">
+                <i class="icon-time"></i>
+                &nbsp;
+                Tomorrow
+              </div>
+              <div class="one columns logo">
+                <a href="/breakthrough-hk-rise" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
+              </div>
+              <div class="seven columns description">
+                <h4><a href="/breakthrough-hk-rise">Breakthrough HK@RISE – Preliminary</a></h4>
+                <h5><a href="/breakthrough-hk-rise">Breakthrough HK@RISE – Preliminary</a></h5>
+              </div>
+              <div class="two columns location">
+              </div>
+            </div>
+
+            <div class="event-teaser" data-event-id="2653">
+              <div class="two columns time">
+                <i class="icon-time"></i>
+                &nbsp;
+                Tomorrow
+              </div>
+              <div class="one columns logo">
+                <a href="/rise" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
+              </div>
+              <div class="seven columns description">
+                <h4><a href="/rise">RISE</a></h4>
+                <h5><a href="/rise"></a></h5>
+              </div>
+              <div class="two columns location">
+                <a href="http://www.hackathon.io/events?location=Hong+Kong"><i class="icon-map-marker"></i>
+                  &nbsp;
+                  Hong Kong
+                </a></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="three columns">
+        <div class="event-filters">
+          <form accept-charset="UTF-8" action="http://www.hackathon.io/events" data-remote="true" data-target=".directory" id="eventFilters" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+            <div class="row">
+              <div class="input-group">
+                <input class="search" id="term" name="term" placeholder="Search Gaming Events" type="text">
+              </div>
+              <h4 class="near-location">near</h4>
+            </div>
+            <div class="row">
+              <div class="input-group">
+                <input id="location" name="location" placeholder="Location" type="text">
+              </div>
+              <div class="hidden" style="margin:0; padding:0; visibility:hidden; position:absolute;">
+                <input name="commit" type="submit" value="filter">
+              </div>
+            </div>
+            <div class="row">
+              <h4>Date</h4>
+              <label>
+                <input checked="checked" data-submit-on="change" data-target="#eventFilters" id="time__" name="time" type="radio" value=" ">
+                Upcoming
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_this_week" name="time" type="radio" value="this_week">
+                This Week
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_next_30_days" name="time" type="radio" value="next_30_days">
+                30 Days
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_next_90_days" name="time" type="radio" value="next_90_days">
+                90 Days
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_past" name="time" type="radio" value="past">
+                Past
+              </label>
+            </div>
+            <div class="row">
+              <h4>Game</h4>
+              <div class="select2-container" id="s2id_event-tag-select">    
+                <a href="#" onclick="return false;" class="select2-choice">   <span>All Games</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a>    <div class="select2-drop select2-offscreen">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div>
+              </div>
+              <select ng-model="eventObject.eventgame" ng-options="game.gameTitle for game in allGames" class="form-control" id="game" name="game" data-submit-on="change" data-target="#eventFilters" id="event-tag-select" name="tag" style="display: none;">
+              </select>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="nine columns">
+        <div class="directory">
+          <div class="event-results">
+            <div class="events-teasers">
+
+              <div class="event-teaser" ng-repeat="obj in eventList[0] | filter:search">
+                <div class="two columns time">
+                  <i class="icon-time"></i>
+                  &nbsp;
+                  {{obj.attributes.eventDate | date: 'shortDate'}}
+                </div>
+                <div class="one columns logo">
+                  <i class="fa fa-gamepad fa-2x"></i>
+                </div>
+                <div class="seven columns description">
+                  <h4><a href="#/">{{obj.attributes.eventName}}</a></h4>
+                  <h5>{{obj.attributes.eventDescription}}</h5>
+                </div>
+                <div class="two columns location">
+                  <i class="icon-map-marker"></i>
+                    &nbsp;
+                    {{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}
+                </div>
+              </div>
+<!--
+              <div class="event-teaser">
+                <div class="two columns time">
+                  <i class="icon-time"></i>
+                  &nbsp;
+                  Now
+                </div>
+                <div class="one columns logo">
+                  <a href="/cisco-innovation" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
+                </div>
+                <div class="seven columns description">
+                  <h4>{{obj.attributes.eventName}}</h4>
+                  <h6><i class="fa fa-gamepad fa-2x"></i>{{obj.attributes.eventGame != null ? obj.attributes.eventGame : "Magic"}}</h6>
+                </div>
+                <div class="two columns location">
+                </div>
+              </div>
+
+                <div class="event-teaser" data-event-id="2655">
+                  <div class="two columns time">
+                    <i class="icon-time"></i>
+                    &nbsp;
+                    Now
+                  </div>
+                  <div class="one columns logo">
+                    <a href="/20-000-eulife" style="background-image: url('http://s3.amazonaws.com/hackathon.io/profiles/images/000/048/409/thumb/App_Challenge_848x848.png?1437168517');"></a>
+                  </div>
+                  <div class="seven columns description">
+                    <h4><a href="/20-000-eulife">€20,000 #EULife AppChallenge</a></h4>
+                    <h5><a href="/20-000-eulife">Open Data Contest ends 30th Sept 2015</a></h5>
+                  </div>
+                  <div class="two columns location">
+                    <a href="http://www.hackathon.io/events?location=London"><i class="icon-map-marker"></i>
+                      &nbsp;
+                      London
+                    </a></div>
+                  </div>
+
+                  <div class="event-teaser" data-event-id="2653">
+                    <div class="two columns time">
+                      <i class="icon-time"></i>
+                      &nbsp;
+                      Tomorrow
+                    </div>
+                    <div class="one columns logo">
+                      <a href="/rise" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
+                    </div>
+                    <div class="seven columns description">
+                      <h4><a href="/rise">RISE</a></h4>
+                      <h5><a href="/rise"></a></h5>
+                    </div>
+                    <div class="two columns location">
+                      <a href="http://www.hackathon.io/events?location=Hong+Kong"><i class="icon-map-marker"></i>
+                        &nbsp;
+                        Hong Kong
+                      </a></div>
+                    </div>
+
+                    <div class="event-teaser" data-event-id="2628">
+                      <div class="two columns time">
+                        <i class="icon-time"></i>
+                        &nbsp;
+                        3 days
+                      </div>
+                      <div class="one columns logo">
+                        <a href="/jqhackathon" style="background-image: url('http://s3.amazonaws.com/hackathon.io/profiles/images/000/047/781/thumb/logo.png?1436250755');"></a>
+                      </div>
+                      <div class="seven columns description">
+                        <h4><a href="/jqhackathon">jQHackathon</a></h4>
+                        <h5><a href="/jqhackathon">Hangout with other kewl Hackers at the 1st Official jQuery Conf in India</a></h5>
+                      </div>
+                      <div class="two columns location">
+                        <a href="http://www.hackathon.io/events?location=Hotel+Chancery+Pavilion%2C+%23135%2C+Residency+Road%2C+Bangalore"><i class="icon-map-marker"></i>
+                          &nbsp;
+                          Hotel Chancery Pavilion, #135, Residency Road, Bangalore
+                        </a></div>
+                      </div>
+-->
+
+                    <span id="page_2"><a href="/events?page=2" class="button twelve secondary radius" data-remote="true" data-target="#page_2">More</a></span>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- <div class='event-container container-fluid'>
 
   <div class="event-search input-group">
-    <span class="input-group-addon" id="basic-addon1">Filer</span>
+    <span class="input-group-addon" id="basic-addon1">Filter</span>
     <input ng-model="search" type="text" class="form-control" placeholder="Search here" aria-describedby="basic-addon1">
   </div>
 
@@ -13,7 +252,7 @@
       <div class="event-detail">
         <i class="fa fa-calendar-o fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventDate != null ? obj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span> <i class="fa fa-money fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventPrice != null ? "$" + obj.attributes.eventPrice : "Free"}}</span>
       </div>
-      <p>{{obj.attributes.eventDescription != null ? obj.attributes.eventDescription : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."}}</p>
+      <p>{{obj.attributes.eventDescription != null ? obj.attributes.eventDescription : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}</p>
   </div>
 
-</div>
+</div> -->

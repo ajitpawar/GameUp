@@ -10,7 +10,6 @@ GameUpApp.factory('events', ['$q', function($q){
     eventObject.set("eventLocation", event.eventlocation);
     eventObject.set("eventDate", event.eventdate);
     eventObject.set("eventTime", event.eventtime);
-    
     // BUG
     // This is failing because the parse backend expects a Pointer to a game,
     // and instead it is recieving a string.
@@ -44,6 +43,10 @@ GameUpApp.factory('events', ['$q', function($q){
     // deferred.resolve;
     // return deferred.promise;
     return gamesList;
+
+  }
+
+  service.getEvent = function(){
 
   }
 

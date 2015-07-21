@@ -6,15 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GameUp!</title>
   <link href="assets/img/favicon.png" rel="shortcut icon">
-  <link href="http://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <link href="http://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
   <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
-  <link href="assets/css/styles.css" rel="stylesheet">
+   -->
+  <link href="assets/css/extrastyles.css" media="screen" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
+<div class="main-wrapper">
+  <nav ng-controller="NavbarController" class="top-nav">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="name">
+          <a class="brand" href="#/home">
+          Game<span class="red-font">Up</span>
+          </a>
+        </div>
+        <ul class="nav left">
+          <li class="nav-item"><a href="#/events">Events</a></li>
+        </ul>
+        <ul class="nav right"> 
+          <li class="nav-item desktop-visible">
+            <input class="search" placeholder="Search">
+            <i class="icon icon-search"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#/create_event" class="big-red-button">Host your event
+            </a>
+          </li>
+          <li ng-if="!isAuthenticated()" class="nav-item">
+            <a class="login-link" href="#/login">
+              <div class="icon icon-user round-button"></div>
+              sign in
+            </a>
+          </li>
+          <li ng-if="isAuthenticated()" class="nav-item">
+            <a href="#/home" ng-click="logOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--
 <div ng-controller="NavbarController" class="navbar navbar-default navbar-static-top">
   <div class="navbar-header">
     <a class="navbar-brand" href="#/"><i class="ion-ios7-pulse-strong"></i> GameUp!</a>
@@ -33,9 +73,10 @@
     <li><a href="#" ng-click="logOut()">Logout</a></li>
   </ul>
 </div>
+-->
 
 <div ng-view></div>
-
+</div>
 <!-- angular -->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="https://code.angularjs.org/1.3.15/angular-route.min.js"></script>
