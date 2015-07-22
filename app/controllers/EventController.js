@@ -1,7 +1,25 @@
 GameUpApp.controller('EventController', ['$scope', '$location', 'events', function($scope, $location, events){
 
   $scope.createEvent = function(form){
-    events.create(form)
+    // lookup game object with the game name that was selected in the form.
+    var gameName = form.eventgame.gameObject.attributes.Name;
+
+    angular.forEach($scope.allGameObjects, function(value){
+      debugger;
+      if (value.gameObject.attributes.Name == gameName){
+        gameObject = value.gameObject;
+      }
+    });
+    /*
+    for (int i = 0; i < $scope.allGameObjects; i ++){
+      var currentObject = allGameObjects[i].gameObject
+      if (currentObject.attributes.Name == gameName){
+        gameObject = currentObject;
+      }
+    }
+    */
+
+    events.create(form, gameObject)
       .then(function(){
         $location.path('/');
       }, function(){
@@ -23,32 +41,13 @@ GameUpApp.controller('EventController', ['$scope', '$location', 'events', functi
 
   $scope.populateGamesList = function(){
 
-    $scope.allGames = events.getGamesList();
-
-    // events.getGamesList().then(function(result){
-    //     debugger;
-    //     $scope.allGames = result;
-    //   }, function(){
-    //     $scope.error = "There was an error loading the games";
-    //   });
-    // var Games = Parse.Object.extend("Game");
-    // var query = new Parse.Query("Game");
-    
-    // query.each(function(result){
-    //   //console.log(result.attributes.Name);
-    //   // Idealy this is implemented with Jquery as this seems like a lot.
-    //   var node = document.createElement("option");                 
-    //   var textnode = document.createTextNode(result.attributes.Name);
-    //   // $('#game').append("<option>" + result.attributes.Name + "</option>");
-    //   //node.appendChild(textnode);
-    //   //document.getElementById("game").appendChild(node);
-    // });
+    // Game objects
+    $scope.allGameObjects = events.getAllGameObjects();
 
 
   };
 
   // Retrieve the games list from parse on page load.
-  debugger;
   $scope.populateGamesList();
 
 }]);
