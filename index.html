@@ -6,14 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GameUp!</title>
   <link href="assets/img/favicon.png" rel="shortcut icon">
+
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- For tournament brackets -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/gracket.js"></script>
 
   <link href="http://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
   <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <!-- <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
    -->
+  
+  <link href="assets/css/login.css" rel="stylesheet" type="text/css">
+  <!-- <link href="assets/css/styles.css" rel="stylesheet" type="text/css"> -->
+  <link href="assets/css/gracket.css" rel="stylesheet" type="text/css"> 
+
   <link href="assets/css/extrastyles.css" media="screen" rel="stylesheet" type="text/css">
 
 </head>
@@ -30,6 +39,7 @@
         </div>
         <ul class="nav left">
           <li class="nav-item"><a href="#/events">Events</a></li>
+          <li class="nav-item"><a href="/brackettest.html">Tournament Brackets</a></li>
         </ul>
         <ul class="nav right"> 
           <li class="nav-item desktop-visible">
@@ -104,6 +114,7 @@
 <script src="app/controllers/SignupController.js"></script>
 <script src="app/controllers/ProfileController.js"></script>
 <script src="app/controllers/ListEventsController.js"></script>
+<script src="app/controllers/BracketController.js"></script>
 
 </body>
 </html>

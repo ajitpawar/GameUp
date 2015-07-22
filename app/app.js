@@ -17,8 +17,8 @@ GameUpApp.run(['$rootScope', function($scope) {
 GameUpApp.config(function($routeProvider) {
     $routeProvider
     .when('/', {
-      controller: 'HomeController',
-      templateUrl: 'app/views/home.html'
+      controller: 'ListEventsController',
+      templateUrl: 'app/views/events.html'
     })
     .when('/create_event', {
       controller: 'EventController',
@@ -39,6 +39,10 @@ GameUpApp.config(function($routeProvider) {
     .when('/events', {
       controller: 'ListEventsController',
       templateUrl: 'app/views/events.html'
+    })
+    .when('/bracket', {
+      controller: 'BracketController',
+      templateUrl: 'app/views/bracket.html'
     })
     .otherwise({
       redirectTo: '/'

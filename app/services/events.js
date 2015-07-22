@@ -43,7 +43,6 @@ GameUpApp.factory('events', ['$q', function($q){
     // deferred.resolve;
     // return deferred.promise;
     return gamesList;
-
   }
 
   service.getEvent = function(){
