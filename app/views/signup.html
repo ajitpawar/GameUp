@@ -1,50 +1,47 @@
-<div class="container">
-  <div class="row">
-    <div class="center-form panel">
-      <div class="panel-body">
-        <h2 class="text-center">Sign up</h2>
-        <form method="post" ng-submit="signup()" name="signupForm">
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.username.$invalid && signupForm.username.$dirty }">
-            <input class="form-control input-lg" type="text" name="username" ng-model="username" placeholder="Username" required autofocus>
-            <span class="ion-person form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.username.$dirty" ng-messages="signupForm.username.$error">
-              <div ng-message="required">You must enter your name.</div>
+<div class="row">
+  <div class="twelve columns">
+    <script type="text/javascript">
+    $(function() {
+      if(!_kmq) {
+        window._kmq = [];
+        var _kmq = window._kmq;
+      }
+      _kmq.push(['record','viewed signup with email', {}]);
+    });
+    </script>
+
+    <div class="row">
+      <div class="six columns centered">
+        <form accept-charset="UTF-8" class="simple_form new_user" method="post" ng-submit="signup()" name="signupForm">
+          <div class="pane">
+            <div class="header">
+              <div class="pane-title">Create a GameUp account</div>
+            </div>
+            <div class="body">
+              <div class="input string required user_profile_slug">
+                <input class="string required" id="user_profile_attributes_slug" placeholder="Username" size="50" type="text" name="username" ng-model="username" required autofocus>
+              </div>
+              <div class="input email required user_email">
+                <input class="string email required" id="user_email" size="50" type="email" id="email" name="email" ng-model="email" placeholder="Email" required ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
+              </div>
+              <div class="input password optional user_password">
+                <input class="password optional" id="user_password" placeholder="Password" size="50" type="password" name="password" ng-model="password" required>
+              </div>
+            </div>
+          <div class="footer">
+            <div class="left">
+              <input class="button radius button radius" id="submit" name="commit" type="submit" value="Create">
+            </div>
+            <div class="right">
+              Have an account?
+              <a href="#/login">login here</a>
             </div>
           </div>
+        </div>
+      </form>
 
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
-            <input class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required
-            ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
-            <span class="ion-at form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
-              <div ng-message="required">Your email address is required.</div>
-              <div ng-message="pattern">Your email address is invalid.</div>
-            </div>
-          </div>
-
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
-            <input password-strength class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
-            <span class="ion-key form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
-              <div ng-message="required">Password is required.</div>
-            </div>
-          </div>
-
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
-            <input password-match="password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="confirmPassword" placeholder="Confirm Password">
-            <span class="ion-key form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty" ng-messages="signupForm.confirmPassword.$error">
-              <div ng-message="compareTo">Password must match.</div>
-            </div>
-          </div>
-
-          <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">Sign up</button>
-          <br/>
-
-          <p class="text-center text-muted">Already have an account? <a href="/#/login">Log in now</a></p>
-        </form>
-      </div>
     </div>
   </div>
-</div>
 
+</div>
+</div>

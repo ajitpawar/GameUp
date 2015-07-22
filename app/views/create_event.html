@@ -1,14 +1,15 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">Create Event</div>
-    <div class="panel-body">
+
+<div class="row">
+  <div class="eight columns centered">
+  <div class="pane">
+    <div class="header">
+      <div class="pane-title">Event Info</div>
+    </div>
+    <div class="body">
       <div class="row">
         <div class="col-sm-8">
-          <div ng-if = "error" class="error">{{error}}</div>
           <!-- panel preview -->
           <div class="col-sm-12">
-              <!-- <h4>Create Event</h4> -->
               <div ng-controller="EventController">
                   <div class="panel-body form-horizontal payment-form">
                       <div class="form-group">
@@ -57,7 +58,7 @@
                       <p><button ng-click="createEvent(eventObject)">Submit</button></p>
                   </div>
               </div>
-          </div> <!-- / panel preview -->
+          </div> 
         </div>
         </div>
       </div>

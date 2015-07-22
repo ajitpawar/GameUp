@@ -41,7 +41,10 @@
     <div class="row">
       <div class="three columns">
         <div class="event-filters">
-          <form accept-charset="UTF-8" action="http://www.hackathon.io/events" data-remote="true" data-target=".directory" id="eventFilters" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+          <form accept-charset="UTF-8" action="#/events" data-remote="true" data-target=".directory" id="eventFilters" method="get">
+            <div style="margin:0;padding:0;display:inline">
+              <input name="utf8" type="hidden" value="✓">
+            </div>
             <div class="row">
               <div class="input-group">
                 <input class="search" id="term" name="term" placeholder="Search Gaming Events" type="text">
@@ -115,84 +118,6 @@
                     {{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}
                 </div>
               </div>
-<!--
-              <div class="event-teaser">
-                <div class="two columns time">
-                  <i class="icon-time"></i>
-                  &nbsp;
-                  Now
-                </div>
-                <div class="one columns logo">
-                  <a href="/cisco-innovation" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
-                </div>
-                <div class="seven columns description">
-                  <h4>{{obj.attributes.eventName}}</h4>
-                  <h6><i class="fa fa-gamepad fa-2x"></i>{{obj.attributes.eventGame != null ? obj.attributes.eventGame : "Magic"}}</h6>
-                </div>
-                <div class="two columns location">
-                </div>
-              </div>
-
-                <div class="event-teaser" data-event-id="2655">
-                  <div class="two columns time">
-                    <i class="icon-time"></i>
-                    &nbsp;
-                    Now
-                  </div>
-                  <div class="one columns logo">
-                    <a href="/20-000-eulife" style="background-image: url('http://s3.amazonaws.com/hackathon.io/profiles/images/000/048/409/thumb/App_Challenge_848x848.png?1437168517');"></a>
-                  </div>
-                  <div class="seven columns description">
-                    <h4><a href="/20-000-eulife">€20,000 #EULife AppChallenge</a></h4>
-                    <h5><a href="/20-000-eulife">Open Data Contest ends 30th Sept 2015</a></h5>
-                  </div>
-                  <div class="two columns location">
-                    <a href="http://www.hackathon.io/events?location=London"><i class="icon-map-marker"></i>
-                      &nbsp;
-                      London
-                    </a></div>
-                  </div>
-
-                  <div class="event-teaser" data-event-id="2653">
-                    <div class="two columns time">
-                      <i class="icon-time"></i>
-                      &nbsp;
-                      Tomorrow
-                    </div>
-                    <div class="one columns logo">
-                      <a href="/rise" style="background-image: url('http://www.hackathon.io/assets/icns/avatar/event.png');"></a>
-                    </div>
-                    <div class="seven columns description">
-                      <h4><a href="/rise">RISE</a></h4>
-                      <h5><a href="/rise"></a></h5>
-                    </div>
-                    <div class="two columns location">
-                      <a href="http://www.hackathon.io/events?location=Hong+Kong"><i class="icon-map-marker"></i>
-                        &nbsp;
-                        Hong Kong
-                      </a></div>
-                    </div>
-
-                    <div class="event-teaser" data-event-id="2628">
-                      <div class="two columns time">
-                        <i class="icon-time"></i>
-                        &nbsp;
-                        3 days
-                      </div>
-                      <div class="one columns logo">
-                        <a href="/jqhackathon" style="background-image: url('http://s3.amazonaws.com/hackathon.io/profiles/images/000/047/781/thumb/logo.png?1436250755');"></a>
-                      </div>
-                      <div class="seven columns description">
-                        <h4><a href="/jqhackathon">jQHackathon</a></h4>
-                        <h5><a href="/jqhackathon">Hangout with other kewl Hackers at the 1st Official jQuery Conf in India</a></h5>
-                      </div>
-                      <div class="two columns location">
-                        <a href="http://www.hackathon.io/events?location=Hotel+Chancery+Pavilion%2C+%23135%2C+Residency+Road%2C+Bangalore"><i class="icon-map-marker"></i>
-                          &nbsp;
-                          Hotel Chancery Pavilion, #135, Residency Road, Bangalore
-                        </a></div>
-                      </div>
--->
 
                     <span id="page_2"><a href="/events?page=2" class="button twelve secondary radius" data-remote="true" data-target="#page_2">More</a></span>
 
@@ -204,52 +129,6 @@
           </div>
         </div>
 
-        <div id="footer">
-          <div class="foot">
-            <h1>
-              Game<span class="h1">Up</span>
-            </h1>
-            <ul>
-              <li>
-                <p>
-                  <a href="#/create_event">
-                    HOST A GAMING EVENT
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href="mailto:support@gameup.com?subject=GameUp Support">
-                    SUPPORT
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href="#/about">
-                    ABOUT
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href="#/terms">
-                    TERMS &amp; PRIVACY
-                  </a>
-                </p>
-              </li>
-            </ul>
-            <p>© 2015 GameUp</p>
-          </div>
-          <div class="link">
-            <a href="http://twitter.com/GameUp">
-              <i class="fa fa-twitter fa-2x"></i>
-            </a>
-            <a href="http://www.facebook.com/GameUp">
-              <i class="fa fa-facebook fa-2x"></i>
-            </a>
-          </div>
-        </div>        
 
 <!-- <div class='event-container container-fluid'>
 
