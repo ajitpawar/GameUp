@@ -197,3 +197,92 @@ a {
   margin-right: 15px;
   margin-left: 5px;
 }
+
+.event-detail-container .header {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+
+.event-detail-container .header .banner {
+  display: table-cell;
+  padding-right: 20px;
+  vertical-align: top;
+}
+
+.event-detail-container .header .banner img {
+  width: 100px;
+  height: auto;
+}
+
+.event-detail-container .header .detail {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.event-detail-container .header .detail h2 {
+  margin: 0;
+}
+
+.event-detail-container .header .detail span {
+  padding-right: 30px;
+}
+
+.event-detail-container .sidebar button {
+  width: 100%;
+}
+
+.event-detail-container .sidebar .organizers {
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+}
+
+.event-detail-container .sidebar .organizers .organizer {
+  text-align: center;
+}
+
+.event-detail-container .sidebar .organizers .organizer img {
+  width: 100%;
+}
+
+.event-detail-container .sidebar .attendees {
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+}
+
+.event-detail-container .sidebar .attendees .attendee {
+  text-align: center;
+}
+
+.event-detail-container .sidebar .attendees .attendee img {
+  width: 100%;
+}
+
+.event-detail-container .sidebar .games {
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+}
+
+.event-detail-container .sidebar .games .game {
+  text-align: center;
+}
+
+.event-detail-container .sidebar .games .game img {
+  width: 100%;
+}
+
+.event-detail-container .event-detail .about {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.event-detail-container .event-detail .map-container {
+  background-color: white;
+  padding-bottom: 10px;
+}
