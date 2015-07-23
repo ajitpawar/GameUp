@@ -2,13 +2,54 @@
 
   <div class="col-md-12 header">
     <div class="banner">
-      <img src="http://inwallspeakers1.com/wp-content/uploads/2014/10/dr-dre-beats-logo.png">
+      <!-- <img src="http://inwallspeakers1.com/wp-content/uploads/2014/10/dr-dre-beats-logo.png"> -->
+      <img src="assets/img/acLogo.jpg">
     </div>
     <div class="detail">
       <h2>{{eventObj.attributes.eventName}}</h2>
       <div><span>{{eventObj.attributes.eventDate != null ? eventObj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span><span>12PM EDT</span></div>
       <div><span>Toronto, ON</span></div>
     </div>
+
+
+
+  <div id="tabs">
+    <div class="row">
+      <button id="drop-down" onclick="jQuery(&quot;#tabs ul.tab-list&quot;).slideToggle()"></button>
+      <ul class="tab-list">
+        <li class="active" id="tab_show">
+          <a href="#">Overview</a>
+        </li>
+        <li id="tab_schedules">
+          <a href="#">Schedule</a>
+        </li>
+        <li id="tab_rules">
+          <a href="#">Rules</a>
+        </li>
+        <li id="tab_chat">
+          <a href="#">Chats</a>
+        </li>
+        <li id="tab_users">
+          <a href="#">People</a>
+        </li>
+        <li id="tab_projects">
+          <a href="#">Projects</a>
+        </li>
+        <li id="tab_photos">
+          <a href="#">Twitter Feed</a>
+        </li>
+        <li id="tab_prizes">
+          <a href="#">Prizes</a>
+        </li>
+        <li id="tab_judge">
+          <a href="#">Judging</a>
+        </li>
+        <li id="contact_organizer_btn"><a href="#" class="big-red-button" data-method="post" rel="nofollow">Contact Organizers</a></li>
+      </ul>
+    </div>
+  </div>
+
+
   </div>
 
   <div class="col-md-4 sidebar">
@@ -57,47 +98,9 @@
     <div class="col-md-12 map-container">
       <h4>Location</h4>
       <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
-      <!-- <map center="-34.397, 150.644" zoom="8"></map> -->
+      <map center="-34.397, 150.644" zoom="8"></map>
     </div>
   </div>
 
 </div>
-<!--
-<div id="tabs">
-  <div class="row">
-    <button id="drop-down" onclick="jQuery(&quot;#tabs ul.tab-list&quot;).slideToggle()"></button>
-    <ul class="tab-list">
-      <li class="active" id="tab_show">
-        <a href="/cisco-innovation">Overview</a>
-      </li>
-      <li id="tab_schedules">
-        <a href="/cisco-innovation/schedules">Schedule</a>
-      </li>
-      <li id="tab_rules">
-        <a href="/cisco-innovation/rules">Rules</a>
-      </li>
-      <li id="tab_chat">
-        <a href="/cisco-innovation/chats">Chats</a>
-      </li>
-      <li id="tab_users">
-        <a href="/cisco-innovation/people">People</a>
-      </li>
-      <li id="tab_projects">
-        <a href="/cisco-innovation/projects">Projects</a>
-      </li>
-      <li id="tab_photos">
-        <a href="/cisco-innovation/photos">Twitter Feed</a>
-      </li>
-      <li id="tab_prizes">
-        <a href="/cisco-innovation/prizes">Prizes</a>
-      </li>
-      <li id="tab_judge">
-        <a href="/cisco-innovation/submissions/judge">Judging</a>
-      </li>
-      <li id="contact_organizer_btn"><a href="/conversations?member_ids%5B%5D=33019" class="big-red-button" data-method="post" rel="nofollow">Contact Organizers</a></li>
 
-    </ul>
-  </div>
-  -->
-
-</div>
