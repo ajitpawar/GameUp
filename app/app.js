@@ -16,9 +16,11 @@ GameUpApp.run(['$rootScope', function($scope) {
         customerID : "cus_6eu21pogeFxGh6",
         recipientID : "rp_16RazQA1KKgMhpkLTLpIgXgp",
         paid : true,
-        amount : 1000
+        amount : 800
     }
   };
+
+  $scope.alerts = [];
 
   $scope.logOut = function(form) {
     Parse.User.logOut();
@@ -74,3 +76,15 @@ GameUpApp.config(function($routeProvider) {
 
 });
 
+
+// directive
+MyApp.directive('dismissOnTimeout', ['$timeout', function($timeout) {
+  return {
+    // require: 'alert',
+    link: function(scope, element, attrs) {
+      $timeout(function(){
+        scope.closeAlert();
+      }, parseInt(attrs.dismissOnTimeout, 10));
+    }
+  }
+}]);

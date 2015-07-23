@@ -286,3 +286,22 @@ a {
   background-color: white;
   padding-bottom: 10px;
 }
+
+#speakers {
+  background-image: url('../img/sound-wave-trans.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#speakers .name {
+  font-size: 25px;
+  margin: 10px 0 2px;
+}
+#speakers .sub {
+  font-size: 18px;
+  color: #BE1622;
+  margin: 0 0 15px;
+}

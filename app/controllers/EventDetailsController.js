@@ -10,6 +10,10 @@ GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventSer
   };
 
 
+	$scope.closeAlert = function(index) {
+    	$scope.alerts.splice(index, 1);
+  	};
+
   $scope.chargeStripeCardOfUser = function(){
 
 	var customerID = $scope.user.stripe.customerID;
@@ -28,6 +32,7 @@ GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventSer
 			// console.log(resp);
 			var mssg = "Your "+resp.source.brand+" was successfully charged $"+ (resp.amount)/100 + " " + resp.currency;
 			console.log(mssg);
+          	$scope.alerts.push({type:"success", mssg:mssg});
 
           	// save ticket in Parse.Tickets
           	ticketObject.set("event", $scope.eventObj);
