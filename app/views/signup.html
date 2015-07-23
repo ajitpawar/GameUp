@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="twelve columns">
+    <script type="text/javascript">
+    $(function() {
+      if(!_kmq) {
+        window._kmq = [];
+        var _kmq = window._kmq;
+      }
+      _kmq.push(['record','viewed signup with email', {}]);
+    });
+    </script>
+
+    <div class="row">
+      <div class="six columns centered">
+        <form accept-charset="UTF-8" class="simple_form new_user" method="post" ng-submit="signup()" name="signupForm">
+          <div class="pane">
+            <div class="header">
+              <div class="pane-title">Create a GameUp account</div>
+            </div>
+            <div class="body">
+              <div class="input string required user_profile_slug">
+                <input class="string required" id="user_profile_attributes_slug" placeholder="Username" size="50" type="text" name="username" ng-model="username" required autofocus>
+              </div>
+              <div class="input email required user_email">
+                <input class="string email required" id="user_email" size="50" type="email" id="email" name="email" ng-model="email" placeholder="Email" required ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
+              </div>
+              <div class="input password optional user_password">
+                <input class="password optional" id="user_password" placeholder="Password" size="50" type="password" name="password" ng-model="password" required>
+              </div>
+            </div>
+          <div class="footer">
+            <div class="left">
+              <input class="button radius button radius" id="submit" name="commit" type="submit" value="Create">
+            </div>
+            <div class="right">
+              Have an account?
+              <a href="#/login">login here</a>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+</div>
