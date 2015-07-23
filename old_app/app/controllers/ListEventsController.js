@@ -1,4 +1,4 @@
-GameUpApp.controller('ListEventsController', ['$scope', '$location', function($scope, $location){
+GameUpApp.controller('ListEventsController', ['$scope', '$location', 'eventService', function($scope, $location, eventService){
 
   $scope.eventList = [];
 
@@ -13,10 +13,15 @@ GameUpApp.controller('ListEventsController', ['$scope', '$location', function($s
     $scope.eventList.push(data);
   });
 
-  $scope.formatDate = function(date){
+  $scope.formatDate = function(date) {
     var date = date.split("-").join("/");
     var dateOut = new Date(date);
     return dateOut;
-  }; 
+  };
+
+  $scope.openDetail = function(eventObj) {
+    eventService.setEventId(eventObj);
+    $location.path("/events/"+eventObj.id);
+  };
 
 }]);

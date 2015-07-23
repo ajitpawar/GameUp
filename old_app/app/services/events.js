@@ -39,8 +39,20 @@ GameUpApp.factory('events', ['$q', function($q){
     // deferred.resolve;
     // return deferred.promise;
     return gameObjects;
-
   }
 
   return service;
 }]);
+
+GameUpApp.service('eventService', function() {
+  var eventId;
+
+  return {
+    getEventId: function() {
+      return eventId;
+    },
+    setEventId: function(id) {
+      eventId = id;
+    }
+  };
+});
