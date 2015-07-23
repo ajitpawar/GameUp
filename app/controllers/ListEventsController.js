@@ -6,7 +6,7 @@ GameUpApp.controller('ListEventsController', ['$scope', '$location', 'eventServi
   $scope.retrieveEventList = function(){
     var events = Parse.Object.extend("Event");
     var query = new Parse.Query(events);
-    query.limit(100);
+    query.limit(10);
     return query.find();
   };
 

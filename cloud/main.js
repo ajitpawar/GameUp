@@ -50,7 +50,6 @@ Parse.Cloud.define("chargeStripeCardOfUser", function(request, response)
 	Stripe.Charges.create({
 	  amount: request.params.amount,
 	  currency: "usd",
-	  // card: "tok_3TnIVhEv9P24T0"
 	  customer: request.params.customerID
 	},
 	{

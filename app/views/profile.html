@@ -1,25 +1,25 @@
 <div class="row">
   <div class="panel panel-default">
-    <div class="panel-heading">Profile</div>
+    <!-- <div class="panel-heading">Profile</div> -->
     <div class="panel-body">
 
-      <legend><i class="ion-clipboard"></i> Hi, {{userprofile.name}}</legend>
+      <legend><i class="ion-clipboard"></i> Hi, {{user.name}}</legend><br/><br/>
         <div class="form-group">
-          <label class="control-label">Email:</label> {{userprofile.email}} <br/><br/>
-          <label class="control-label">Profile Picture</label>
-          <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+          <!-- <label class="control-label">Email:</label> {{user.email}} <br/><br/>
+          <label class="control-label">Profile Picture</label> -->
+          <img class="profile-picture" ng-src="{{user.picture}}">
         </div>
 
     </div>
   </div>
 
   <div class="panel panel-default">
-    <div class="panel-heading">Events</div>
+    <div class="panel-heading">Your Purchases</div> <br/>
     <div class="panel-body">
-      <legend><i class="ion-link"></i> Your Events</legend>
       <div>Event 1</div>
       <div>Event 2</div>
       <div>Event 3</div>
     </div>
   </div>
+
 </div>

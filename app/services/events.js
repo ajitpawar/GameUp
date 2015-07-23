@@ -10,9 +10,7 @@ GameUpApp.factory('events', ['$q', function($q){
     eventObject.set("eventLocation", event.eventlocation);
     eventObject.set("eventDate", event.eventdate);
     eventObject.set("eventTime", event.eventtime);
-
     eventObject.set("eventGame", gameObject);
-
     eventObject.set("eventPrice", event.eventprice);
     eventObject.set("eventDescription", event.eventdescription);
 

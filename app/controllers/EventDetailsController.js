@@ -1,5 +1,7 @@
 GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventService', 'events', function($scope, $location, eventService, events){
+
   $scope.eventObj = eventService.getEventId();
+  var TicketObject = Parse.Object.extend("Tickets");
 
   $scope.formatDate = function(date) {
     var date = date.split("-").join("/");
@@ -7,26 +9,52 @@ GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventSer
     return dateOut;
   };
 
+
   $scope.chargeStripeCardOfUser = function(){
-      var customerID = "cus_6eu21pogeFxGh6";
-      var amount = 650;
+
+	var customerID = $scope.user.stripe.customerID;
+	var recipientID = $scope.user.stripe.recipientID;
+	var paid = $scope.user.stripe.paid;
+	var amount = $scope.user.stripe.amount;
+
+	// Create & populate new ticket object
+	var ticketObject = new TicketObject();
 
       Parse.Cloud.run('chargeStripeCardOfUser',
         { customerID: customerID,
           amount: amount
         },
         { success: function(resp) {
-          console.log(resp);
-          var mssg = "Your "+resp.source.brand+" was successfully charged $"+ (resp.amount)/100 + " " + resp.currency;
-          // $scope.alerts.push({type:"", mssg:mssg});
-          console.log(mssg);
+			// console.log(resp);
+			var mssg = "Your "+resp.source.brand+" was successfully charged $"+ (resp.amount)/100 + " " + resp.currency;
+			console.log(mssg);
 
-          // save in Parse.Tickets //
+          	// save ticket in Parse.Tickets
+          	ticketObject.set("event", $scope.eventObj);
+			ticketObject.set("user", $scope.currentUser);
+			ticketObject.set("paid", paid);
+			ticketObject.set("stripeCustomerID", customerID);
+			ticketObject.set("stripeRecipientID", recipientID);
+			ticketObject.set("amount", amount);
+			// console.log(ticketObject.attributes);
+
+			ticketObject.save(null, {
+			  success: function(ticketObject) {
+			  	// console.log(ticketObject);
+			    // console.log('New object created with objectId: ' + ticketObject.id);
+			  },
+			  error: function(ticketObject, error) {
+			    console.log('Failed to create new object, with error code: ' + error.message);
+			  }
+			});
         },
+
         error: function(error) {
           console.log(error);
         }
       });
+
+
     };
 
 
