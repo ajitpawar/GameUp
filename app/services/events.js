@@ -46,13 +46,6 @@ GameUpApp.factory('events', ['$q', function($q){
     return gamesList;
   }
 
-  service.getEvent = function(eventId){
-    var eventObj = Parse.Object.extend("Event");
-    var query = new Parse.Query(eventObj);
-    query.equalTo('objectId', eventId);
-    return query.find();
-  }
-
   return service;
 }]);
 
