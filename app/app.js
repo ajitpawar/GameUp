@@ -16,7 +16,7 @@ GameUpApp.run(['$rootScope', function($scope) {
         customerID : "cus_6eu21pogeFxGh6",
         recipientID : "rp_16RazQA1KKgMhpkLTLpIgXgp",
         paid : true,
-        amount : 800
+        amount : 850
     }
   };
 

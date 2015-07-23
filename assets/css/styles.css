@@ -47,6 +47,10 @@ a {
   padding: 15px;
 }
 
+.nav > li > a {
+  padding: 0;
+}
+
 .navbar-default {
   color: #fff;
   background: #fff;
@@ -287,6 +291,10 @@ a {
   padding-bottom: 10px;
 }
 
+.event-detail-container .event-detail .map-container map {
+  height: 300px;
+}
+
 #speakers {
   background-image: url('../img/sound-wave-trans.png');
   background-repeat: no-repeat;
@@ -304,4 +312,9 @@ a {
   font-size: 18px;
   color: #BE1622;
   margin: 0 0 15px;
+}
+
+/** Remove this stuff **/
+textarea {
+  line-height: auto;
 }

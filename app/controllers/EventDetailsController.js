@@ -1,7 +1,13 @@
 GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventService', 'events', function($scope, $location, eventService, events){
 
-  $scope.eventObj = eventService.getEventId();
   var TicketObject = Parse.Object.extend("Tickets");
+  var eventId = $location.path().replace('/events/', '');
+
+  $scope.eventObj = null;
+
+  events.getEvent(eventId).then(function(data) {
+    $scope.eventObj = data[0];
+  });
 
   $scope.formatDate = function(date) {
     var date = date.split("-").join("/");
@@ -16,26 +22,27 @@ GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventSer
 
   $scope.chargeStripeCardOfUser = function(){
 
-	var customerID = $scope.user.stripe.customerID;
-	var recipientID = $scope.user.stripe.recipientID;
-	var paid = $scope.user.stripe.paid;
-	var amount = $scope.user.stripe.amount;
+    	var customerID = $scope.user.stripe.customerID;
+    	var recipientID = $scope.user.stripe.recipientID;
+    	var paid = $scope.user.stripe.paid;
+    	var amount = $scope.user.stripe.amount;
 
-	// Create & populate new ticket object
-	var ticketObject = new TicketObject();
+    	// Create & populate new ticket object
+    	var ticketObject = new TicketObject();
 
       Parse.Cloud.run('chargeStripeCardOfUser',
         { customerID: customerID,
           amount: amount
         },
         { success: function(resp) {
-			// console.log(resp);
-			var mssg = "Your "+resp.source.brand+" was successfully charged $"+ (resp.amount)/100 + " " + resp.currency;
-			console.log(mssg);
-          	$scope.alerts.push({type:"success", mssg:mssg});
 
-          	// save ticket in Parse.Tickets
-          	ticketObject.set("event", $scope.eventObj);
+      // console.log(resp);
+			var mssg = "Your "+resp.source.brand+" was successfully charged $"+ (resp.amount)/100 + " " + resp.currency;
+			alert(mssg);
+      $scope.alerts.push({type:"success", mssg:mssg});
+
+    	// save ticket in Parse.Tickets
+    	ticketObject.set("event", $scope.eventObj);
 			ticketObject.set("user", $scope.currentUser);
 			ticketObject.set("paid", paid);
 			ticketObject.set("stripeCustomerID", customerID);
