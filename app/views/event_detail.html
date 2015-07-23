@@ -1,0 +1,64 @@
+<div class="container-fluid event-detail-container">
+
+  <div class="col-md-12 header">
+    <div class="banner">
+      <img src="http://inwallspeakers1.com/wp-content/uploads/2014/10/dr-dre-beats-logo.png">
+    </div>
+    <div class="detail">
+      <h2>{{eventObj.attributes.eventName}}</h2>
+      <div><span>{{eventObj.attributes.eventDate != null ? eventObj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span><span>12PM EDT</span></div>
+      <div><span>Toronto, ON</span></div>
+    </div>
+  </div>
+
+  <div class="col-md-4 sidebar">
+    <div ng-if="eventObj.attributes.eventPrice == 0">
+      <button class="btn btn-primary" type="submit">Join Event</button>
+    </div>
+    <div ng-if="eventObj.attributes.eventPrice != 0">
+      <button class="btn btn-primary" type="submit">Buy Ticket (${{eventObj.attributes.eventPrice}})</button>
+    </div>
+    
+    <div class="col-md-12 organizers">
+      <h4>Organizers</h4>
+      <div class="col-md-4 organizer">
+        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+        <p>A&C Games</p>
+      </div>
+    </div>
+
+    <div class="col-md-12 attendees">
+      <h4>Attendees</h4>
+      <div class="col-md-4 attendee">
+        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+      </div>
+      <div class="col-md-4 attendee">
+        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+      </div>
+      <div class="col-md-4 attendee">
+        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+      </div>
+    </div>
+
+    <div class="col-md-12 games">
+      <h4>Games</h4>
+      <div class="col-md-4 game">
+        <img src="http://orig13.deviantart.net/73c9/f/2011/313/b/8/magic_the_gathering_b6_dj_fahr_by_dj_fahr-d4flanz.png">
+        <p>Magic</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 event-detail">
+    <div class="col-md-12 about">
+      <h4>About this event</h4>
+      <p>{{eventObj.attributes.eventDescription}}. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    </div>
+    <div class="col-md-12 map-container">
+      <h4>Location</h4>
+      <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
+      <map center="-34.397, 150.644" zoom="8"></map>
+    </div>
+  </div>
+
+</div>

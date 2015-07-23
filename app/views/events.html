@@ -99,7 +99,7 @@
           <div class="event-results">
             <div class="events-teasers">
 
-              <div class="event-teaser" ng-repeat="obj in eventList[0] | filter:search">
+              <div class="event-teaser" ng-repeat="obj in eventList[0] | filter:search" ng-click="openDetail(obj)">
                 <div class="two columns time">
                   <i class="icon-time"></i>
                   &nbsp;
@@ -137,7 +137,7 @@
     <input ng-model="search" type="text" class="form-control" placeholder="Search here" aria-describedby="basic-addon1">
   </div>
 
-  <div class= "event col-md-8 col-md-offset-2" ng-repeat="obj in eventList[0] | filter:search">
+  <div class= "event col-md-8 col-md-offset-2" ng-repeat="obj in eventList[0] | filter:search" ng-click="openDetail(obj)">
       <h3>{{obj.attributes.eventName}}</h3>
       <div class="event-detail">
         <i class="fa fa-gamepad fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventGame != null ? obj.attributes.eventGame : "Magic"}}</span> <i class="fa fa-map-marker fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</span>

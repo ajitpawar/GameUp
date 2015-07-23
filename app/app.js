@@ -1,6 +1,6 @@
 Parse.initialize("gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26", "9VawOubEqtZK271El0DzWO8wDCSy8txlXsSUwcLZ");
 
-var GameUpApp = angular.module('GameUpApp', ['ngRoute', 'ngMessages', 'parse-angular']);
+var GameUpApp = angular.module('GameUpApp', ['ngRoute', 'ngMessages', 'parse-angular', 'ngMap']);
 
 
 GameUpApp.run(['$rootScope', function($scope) {
@@ -35,6 +35,10 @@ GameUpApp.config(function($routeProvider) {
     .when('/profile', {
       controller: 'ProfileController',
       templateUrl: 'app/views/profile.html'
+    })
+    .when('/events/:id', {
+      controller: 'EventDetailsController',
+      templateUrl: 'app/views/event_detail.html'
     })
     .when('/events', {
       controller: 'ListEventsController',

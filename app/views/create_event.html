@@ -33,7 +33,7 @@
                       <div class="form-group">
                           <label for="game" class="col-sm-3 control-label">Game</label>
                           <div class="col-sm-9">
-                              <select ng-model="eventObject.eventgame" ng-options="game.gameTitle for game in allGames" class="form-control" id="game" name="game" required>
+                              <select ng-model="eventObject.eventgame" ng-options="gameObjectEntry.gameObject.attributes.Name for gameObjectEntry in allGameObjects" class="form-control" id="game" name="game" required>
                               </select>
                           </div>
                       </div>
