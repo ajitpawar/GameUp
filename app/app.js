@@ -78,7 +78,7 @@ GameUpApp.config(function($routeProvider) {
 
 
 // directive
-MyApp.directive('dismissOnTimeout', ['$timeout', function($timeout) {
+GameUpApp.directive('dismissOnTimeout', ['$timeout', function($timeout) {
   return {
     // require: 'alert',
     link: function(scope, element, attrs) {
