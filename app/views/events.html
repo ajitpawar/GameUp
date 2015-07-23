@@ -98,27 +98,25 @@
         <div class="directory">
           <div class="event-results">
             <div class="events-teasers">
-
-              <div class="event-teaser" ng-repeat="obj in eventList[0] | filter:search" ng-click="openDetail(obj)">
-                <div class="two columns time">
-                  <i class="icon-time"></i>
-                  &nbsp;
-                  {{obj.attributes.eventDate | date: 'shortDate'}}
-                </div>
-                <div class="one columns logo">
-                  <i class="fa fa-gamepad fa-2x"></i>
-                </div>
-                <div class="seven columns description">
-                  <h4><a href="#/">{{obj.attributes.eventName}}</a></h4>
-                  <h5>{{obj.attributes.eventDescription}}</h5>
-                </div>
-                <div class="two columns location">
-                  <i class="icon-map-marker"></i>
+                <div class="event-teaser" ng-repeat="obj in eventList[0] | filter:search">
+                  <div class="two columns time">
+                    <i class="icon-time"></i>
                     &nbsp;
-                    {{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}
+                    {{obj.attributes.eventDate | date: 'shortDate'}}
+                  </div>
+                  <div class="one columns logo">
+                    <i class="fa fa-gamepad fa-2x"></i>
+                  </div>
+                  <div class="seven columns description">
+                    <h4><a ng-href="#/events/{{obj.id}}">{{obj.attributes.eventName}}</a></h4>
+                    <h5>{{obj.attributes.eventDescription}}</h5>
+                  </div>
+                  <div class="two columns location">
+                    <i class="icon-map-marker"></i>
+                      &nbsp;
+                      {{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}
+                  </div>
                 </div>
-              </div>
-
                     <span id="page_2"><a href="/events?page=2" class="button twelve secondary radius" data-remote="true" data-target="#page_2">More</a></span>
 
                   </div>

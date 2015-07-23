@@ -33,7 +33,8 @@ GameUpApp.controller('ListEventsController', ['$scope', '$location', 'eventServi
 
   $scope.openDetail = function(eventObj) {
     eventService.setEventId(eventObj);
-    $location.path("/events/"+eventObj.id);
+    $location.path("/events/" + eventObj.id);
+    //$location.path("/events/IcQwR5oKQC");
   };
 
 }]);
