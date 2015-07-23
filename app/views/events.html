@@ -100,7 +100,7 @@
             </div>
             <div class="row">
               <h4>Game</h4>
-              <div class="select2-container" id="s2id_event-tag-select">    
+              <div class="select2-container" id="s2id_event-tag-select">
                 <a href="#" onclick="return false;" class="select2-choice">   <span>All Games</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a>    <div class="select2-drop select2-offscreen">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div>
               </div>
               <select ng-model="eventObject.eventgame" ng-options="game.gameTitle for game in allGames" class="form-control" id="game" name="game" data-submit-on="change" data-target="#eventFilters" id="event-tag-select" name="tag" style="display: none;">

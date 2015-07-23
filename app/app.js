@@ -4,11 +4,33 @@ var GameUpApp = angular.module('GameUpApp', ['ngRoute', 'ngMessages', 'parse-ang
 
 
 GameUpApp.run(['$rootScope', function($scope) {
+
   $scope.currentUser = Parse.User.current();
+
+  $scope.alerts = {};
+  $scope.user = {
+    name: Parse.User.current()==null ? "Guest" : Parse.User.current().getUsername(),
+    email: Parse.User.current().getEmail() == null ? "johndoe@example.com" : Parse.User.current().getEmail(),
+    picture: Parse.User.current().get("profileImg") || 'assets/img/johndoe.png',
+    stripe: {
+        customerID : "cus_6eu21pogeFxGh6",
+        recipientID : "rp_16RazQA1KKgMhpkLTLpIgXgp",
+        paid : true,
+        amount : 850
+    }
+  };
+
+  $scope.alerts = [];
 
   $scope.logOut = function(form) {
     Parse.User.logOut();
     $scope.currentUser = null;
+  };
+
+  $scope.isAuthenticated = function() {
+    if ($scope.currentUser === null)
+        return false;
+    return true;
   };
 
 }]);
@@ -53,3 +75,16 @@ GameUpApp.config(function($routeProvider) {
     });
 
 });
+
+
+// directive
+MyApp.directive('dismissOnTimeout', ['$timeout', function($timeout) {
+  return {
+    // require: 'alert',
+    link: function(scope, element, attrs) {
+      $timeout(function(){
+        scope.closeAlert();
+      }, parseInt(attrs.dismissOnTimeout, 10));
+    }
+  }
+}]);
