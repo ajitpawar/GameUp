@@ -8,10 +8,11 @@ GameUpApp.run(['$rootScope', function($scope) {
   $scope.currentUser = Parse.User.current();
 
   $scope.alerts = {};
+
   $scope.user = {
     name: Parse.User.current()==null ? "Guest" : Parse.User.current().getUsername(),
-    email: Parse.User.current().getEmail() == null ? "johndoe@example.com" : Parse.User.current().getEmail(),
-    picture: Parse.User.current().get("profileImg") || 'assets/img/johndoe.png',
+    email: Parse.User.current() == null || Parse.User.current.getEmail() == null ? "johndoe@example.com" : Parse.User.current().getEmail(),
+    picture: Parse.User.current() == null || Parse.User.current().get("profileImg") == null? 'assets/img/johndoe.png' : Parse.User.current.get("profileImg"),
     stripe: {
         customerID : "cus_6eu21pogeFxGh6",
         recipientID : "rp_16RazQA1KKgMhpkLTLpIgXgp",
