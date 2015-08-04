@@ -11,7 +11,7 @@ GameUpApp.run(['$rootScope', function($scope) {
 
   $scope.user = {
     name: Parse.User.current()==null ? "Guest" : Parse.User.current().getUsername(),
-    email: Parse.User.current() == null || Parse.User.current.getEmail() == null ? "johndoe@example.com" : Parse.User.current().getEmail(),
+    email: Parse.User.current() == null || Parse.User.current().get("email") == null ? "johndoe@example.com" : Parse.User.current().getEmail(),
     picture: Parse.User.current() == null || Parse.User.current().get("profileImg") == null? 'assets/img/johndoe.png' : Parse.User.current.get("profileImg"),
     stripe: {
         customerID : "cus_6eu21pogeFxGh6",
