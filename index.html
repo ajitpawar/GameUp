@@ -34,7 +34,7 @@
       <div class="twelve columns">
         <div class="name">
           <a class="brand" href="#/home">
-          Game<span class="red-font">Up</span>
+            <img class="nav-logo" src="../assets/img/gameuplogo.png">
           </a>
         </div>
         <ul class="nav left">
@@ -49,7 +49,7 @@
           </li>
  -->        <ul class="nav right">
           <li class="nav-item">
-            <a href="#/create_event" class="big-red-button" style="top:12px;padding-left:10px;padding-right:10px;">Create Event</a>
+            <button href="#/create_event" class="nav-create-btn btn btn-primary">Create Event</button>
           </li>
           <li ng-if="!isAuthenticated()" class="nav-item">
             <a class="login-link" href="#/login">
@@ -88,51 +88,15 @@
 
 <div ng-view></div>
 
-<div id="footer">
-  <div class="foot">
-    <h1>
-      Game<span class="h1">Up</span>
-    </h1>
-    <ul>
-      <li>
-        <p>
-          <a href="#/create_event">
-            HOST A GAMING EVENT
-          </a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <a href="mailto:support@gameup.com?subject=GameUp Support">
-            SUPPORT
-          </a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <a href="#/about">
-            ABOUT
-          </a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <a href="#/terms">
-            TERMS &amp; PRIVACY
-          </a>
-        </p>
-      </li>
-    </ul>
-    <p>© 2015 GameUp</p>
+<div id="footer" style="height: auto;">
+  <img class="foot-logo" src="../assets/img/gameuplogo.png">
+  <div class="foot-nav-container">
+    <span class="foot-nav">Host</span>
+    <span class="foot-nav">Support</span>
+    <span class="foot-nav">About</span>
+    <span class="foot-nav">Privacy</span>
   </div>
-  <div class="link">
-    <a href="http://twitter.com/GameUp">
-      <i class="fa fa-twitter fa-2x"></i>
-    </a>
-    <a href="http://www.facebook.com/GameUp">
-      <i class="fa fa-facebook fa-2x"></i>
-    </a>
-  </div>
+  <p>© 2015 GameUp</p>
 </div>
 
 </div>

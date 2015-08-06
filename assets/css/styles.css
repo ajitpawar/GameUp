@@ -24,6 +24,17 @@ a {
   color: #90939a;
 }
 
+.nav-logo {
+  height: 50px;
+  width: auto;
+}
+
+.nav-create-btn {
+  background-color: #e67e22;
+  border: none;
+  margin-top: 12px;
+}
+
 .navbar {
   border: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
@@ -220,6 +231,7 @@ a {
 }
 
 .event-detail-container .header .contact-org {
+  background-color: #2980b9;
   margin-top: 10px;
 }
 
@@ -331,7 +343,7 @@ a {
   margin-bottom: 20px;
 }
 
-.event-detail-container .event-detail .schedule span{
+.event-detail-container .event-detail .schedule span {
   text-indent: 50px;
 }
 
@@ -340,7 +352,7 @@ a {
   margin-bottom: 20px;
 }
 
-.event-detail-container .event-detail .prizes span{
+.event-detail-container .event-detail .prizes span {
   text-indent: 25px;
 }
 
@@ -375,4 +387,25 @@ a {
   font-size: 18px;
   color: #BE1622;
   margin: 0 0 15px;
+}
+
+#footer {
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#footer .foot-logo {
+  max-height: 150px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+#footer .foot-nav-container {
+  margin-bottom: 10px;
+}
+
+#footer .foot-nav {
+  padding-right: 10px;
+  text-transform: uppercase;
 }
