@@ -51,14 +51,19 @@
 
 
   </div>
+  <div class="col-md-12 buy-tickets">
+    <div ng-if="eventObj.attributes.eventPrice != 0">
+      <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Ticket (${{eventObj.attributes.eventPrice}})</button>
+    </div>
+  </div>
 
   <div class="col-md-4 sidebar">
     <div ng-if="eventObj.attributes.eventPrice == 0">
       <button class="btn btn-primary" type="submit" ng-click="joinEvent()">Join Event</button>
     </div>
-    <div ng-if="eventObj.attributes.eventPrice != 0">
+<!--     <div ng-if="eventObj.attributes.eventPrice != 0">
       <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Ticket (${{eventObj.attributes.eventPrice}})</button>
-    </div>
+    </div> -->
 
     <div class="col-md-12 organizers">
       <h4>Organizers</h4>

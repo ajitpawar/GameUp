@@ -236,6 +236,12 @@ a {
   width: 100%;
 }
 
+.event-detail-container .buy-tickets button {
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+
 .event-detail-container .sidebar .organizers {
   margin-top: 20px;
   padding-top: 5px;
