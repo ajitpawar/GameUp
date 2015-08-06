@@ -49,7 +49,7 @@
     </div> -->
     <div class="col-md-12 timeToEvent">
       <h4> Time to event</h4>
-      <p> Time yay</p>
+      <div class="your-clock"></div>
     </div>
     <div class="col-md-12 organizers">
       <h4>Organizers</h4>
@@ -98,11 +98,11 @@
     <div class="col-md-12 schedule">
       <h4>Schedule</h4>
       <span>
-        <h5 style="text-indent:25px;"> Firday </h5>
+        <h5 style="text-indent:25px;"> Friday </h5>
         <p>6:30 pm – Doors open and registration begins</p>
         <p>6:45 pm – First round players take their seats</p>
         <p>7:00pm – First tournament match begins<p>
-        <p>7:00 - 8:00 pm – Tournament games continue</p>
+        <p>7:00pm - 8:00 pm – Tournament games continue</p>
         <p>8:15 pm - Semi-Final tournament game played</p>
         <p>8:30 pm - Final tournament game played</p>
         <p>8:45 pm - Prizes awarded </p>
@@ -129,9 +129,7 @@
     <div class="col-md-12 map-container">
       <h4>Location</h4>
       <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
-      <!-- <map center="43.6572463, -79.4002505" zoom="15">
-        <marker position="[43.6572463, -79.4002505]" />
-        <control name="overviewMap" opened="true" />
+      <control name="overviewMap" opened="true" />
       </map> -->
     </div>
   </div>
