@@ -215,8 +215,8 @@ a {
 }
 
 .event-detail-container .header .banner img {
-  width: 100px;
-  height: auto;
+  width: 180px;
+  height: 80px;
 }
 
 .event-detail-container .header .detail {
@@ -226,10 +226,12 @@ a {
 
 .event-detail-container .header .detail h2 {
   margin: 0;
+  font-size: 25px;
 }
 
 .event-detail-container .header .detail span {
   padding-right: 30px;
+  font-size: 20px;
 }
 
 .event-detail-container .sidebar button {
@@ -239,7 +241,13 @@ a {
 .event-detail-container .buy-tickets button {
   width: 100%;
   margin-bottom: 20px;
+  background-color: #BE1622;
+}
 
+.event-detail-container .sidebar .timeToEvent {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
 }
 
 .event-detail-container .sidebar .organizers {
@@ -288,6 +296,20 @@ a {
 }
 
 .event-detail-container .event-detail .about {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.event-detail-container .event-detail .schedule {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.event-detail-container .event-detail .schedule span{
+  text-indent: 50px;
+}
+
+.event-detail-container .event-detail .prizes {
   background-color: white;
   margin-bottom: 20px;
 }

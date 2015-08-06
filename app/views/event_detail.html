@@ -53,7 +53,7 @@
   </div>
   <div class="col-md-12 buy-tickets">
     <div ng-if="eventObj.attributes.eventPrice != 0">
-      <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Ticket (${{eventObj.attributes.eventPrice}})</button>
+      <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Tickets (${{eventObj.attributes.eventPrice}})</button>
     </div>
   </div>
 
@@ -64,17 +64,25 @@
 <!--     <div ng-if="eventObj.attributes.eventPrice != 0">
       <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Ticket (${{eventObj.attributes.eventPrice}})</button>
     </div> -->
-
+    <div class="col-md-12 timeToEvent">
+      <h4> Time to event</h4>
+      <p> Time yay</p>
+    </div>
     <div class="col-md-12 organizers">
       <h4>Organizers</h4>
       <div class="col-md-4 organizer">
-        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
-        <p>A&C Games</p>
+        <a>
+          <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+          <p>A&C Games</p>
+        </a>
       </div>
     </div>
 
     <div class="col-md-12 attendees">
-      <h4>Attendees</h4>
+      <span>
+        <h4>Attendees</h4>
+        <a style="float: right;"> View all </a>
+      </span>
       <div class="col-md-4 attendee">
         <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
       </div>
@@ -100,10 +108,30 @@
       <h4>About this event</h4>
       <p>{{eventObj.attributes.eventDescription}}.</p>
     </div>
+
+    <div class="col-md-12 schedule">
+      <h4>Schedule</h4>
+      <span>
+        <h5 style="text-indent:25px;"> Firday </h5>
+        <p>6:30 pm – Doors open and registration begins</p>
+        <p>6:45 pm – First round players take their seats</p>
+        <p>7:00pm – First tournament match begins<p>
+        <p>7:00 - 8:00 pm – Tournament games continue</p>
+        <p>8:15 pm - Semi-Final tournament game played</p>
+        <p>8:30 pm - Final tournament game played</p>
+        <p>8:45 pm - Prizes awarded </p>
+        <p>9:00 pm – Refreshments </p>
+        <p>9:30 pm - Store closing </p>
+      </span>
+    </div>
+
+    <div class="col-md-12 prizes">
+      <h4>Prizes</h4>
+    </div>
     <div class="col-md-12 map-container">
       <h4>Location</h4>
       <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
-      <map center="-34.397, 150.644" zoom="8"></map>
+      <map center="43.6572463, -79.4002505" zoom="15"></map>
     </div>
   </div>
 
