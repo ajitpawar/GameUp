@@ -1,6 +1,6 @@
 /* formatting page */
 body { font-family: helvetica, verdana, arial, sans-serif; font-size: 12px; background-color: #efefef; padding: 35px; color: #333;}
-.wrapper { margin: 0; width: 100%; overflow: hidden; border-radius: 0 5px 5px 5px; }
+.wrapper { margin: 0; overflow: hidden; border-radius: 0 5px 5px 5px; }
 a {color: #2C96AF;}
 a:hover { color: #A0B43C; }
 h1 { font-size: 35px; line-height: 24px; }
@@ -9,10 +9,10 @@ h1 a {text-decoration: none; text-transform: uppercase; text-shadow: 0 1px 0 #ff
 body > h3, .container-secondary > h3 { margin: 45px 0 0; font-size: 16px; background: #fff; display: inline-block; padding: 15px 25px 15px 15px; border-radius: 5px 5px 0 0}
 body > h3 p, .container-secondary > h3 > p { color: #CCCCCC; font-size: 14px; font-weight: normal; margin: 2px 0 0; }
 /* theme */
-.g_gracket { width: 9999px; background-color: #fff; padding: 55px 15px 5px; line-height: 100%; position: relative; overflow: hidden;}
+.g_gracket { width: 900px; background-color: #fff; padding: 55px 15px 5px; line-height: 100%; position: relative; overflow: hidden;}
 .g_round { float: left; margin-right: 70px; }
 .g_game { position: relative; margin-bottom: 15px; box-shadow: 3px 4px 0px #ddd; border: 1px solid #fff; border-top: 0; border-left: 0; }
-.g_gracket h3 { min-width: 180px; margin: 0; padding: 10px 8px 8px; font-size: 18px; font-weight: normal; color: #fff} /* @note: this width determinds node size */
+.g_gracket h3 { min-width: 150px; margin: 0; padding: 10px 8px 8px; font-size: 18px; font-weight: normal; color: #fff} /* @note: this width determinds node size */
 .g_team { background: #3597AE; }
 .g_round_label { top: -5px; font-weight: normal; color: #ccc; text-align: center; font-size: 18px}
 .g_team:last-child {  background: #FCB821; }
