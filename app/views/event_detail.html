@@ -9,11 +9,15 @@
       <h2>{{eventObj.attributes.eventName}}</h2>
       <div><span>{{eventObj.attributes.eventDate != null ? eventObj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span><span>12PM EDT</span></div>
       <div><span>Toronto, ON</span></div>
+
     </div>
 
-
-
-  <div id="tabs">
+  <a style="float: right;" href="#" class="big-red-button" data-method="post" rel="nofollow">Contact Organizers</a>
+  <hr>
+<!--   <div id="eventHeader">
+    <h1 style="text-align: center;"> Overview</h1>
+  </div> -->
+  <!-- <div id="tabs">
     <div class="row">
       <button id="drop-down" onclick="jQuery(&quot;#tabs ul.tab-list&quot;).slideToggle()"></button>
       <ul class="tab-list">
@@ -26,28 +30,10 @@
         <li id="tab_rules">
           <a href="#">Rules</a>
         </li>
-        <li id="tab_chat">
-          <a href="#">Chats</a>
-        </li>
-        <li id="tab_users">
-          <a href="#">People</a>
-        </li>
-        <li id="tab_projects">
-          <a href="#">Projects</a>
-        </li>
-        <li id="tab_photos">
-          <a href="#">Twitter Feed</a>
-        </li>
-        <li id="tab_prizes">
-          <a href="#">Prizes</a>
-        </li>
-        <li id="tab_judge">
-          <a href="#">Judging</a>
-        </li>
         <li id="contact_organizer_btn"><a href="#" class="big-red-button" data-method="post" rel="nofollow">Contact Organizers</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
 
   </div>
@@ -127,11 +113,27 @@
 
     <div class="col-md-12 prizes">
       <h4>Prizes</h4>
+      <span>
+        <p>1st place – Rare magic the gathering booster pack</p>
+        <p>2nd place - $50 gift certificate</p>
+        <p>3rd place - $25 gift certificate</p>
+      </span>
+    </div>
+
+    <div class="col-md-12 rules">
+      <h4>Rules</h4>
+      <span>
+        <p>Bring your best deck – No elemental cards allowed.</p>
+      </span>
     </div>
     <div class="col-md-12 map-container">
       <h4>Location</h4>
       <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
-      <map center="43.6572463, -79.4002505" zoom="15"></map>
+      <map center="43.6572463, -79.4002505" zoom="15">
+        <marker position="[43.6572463, -79.4002505]" />
+        <!-- <shape name="circle" radius="400" center="[43.6572463, -79.4002505]" radius="4000" /> -->
+        <control name="overviewMap" opened="true" />
+      </map>
     </div>
   </div>
 

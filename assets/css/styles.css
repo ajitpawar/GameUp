@@ -314,6 +314,15 @@ a {
   margin-bottom: 20px;
 }
 
+.event-detail-container .event-detail .prizes span{
+  text-indent: 25px;
+}
+
+.event-detail-container .event-detail .rules {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
 .event-detail-container .event-detail .map-container {
   background-color: white;
   padding-bottom: 10px;
