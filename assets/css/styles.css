@@ -270,6 +270,7 @@ a {
 .event-detail-container .sidebar .organizers .organizer img {
   height: 70px;
   border-radius: 50%;
+  margin-bottom: 5px;
 }
 
 .event-detail-container .sidebar .attendees {
