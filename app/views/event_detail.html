@@ -9,11 +9,8 @@
       <h2>{{eventObj.attributes.eventName}}</h2>
       <div><span>{{eventObj.attributes.eventDate != null ? eventObj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span><span>12PM EDT</span></div>
       <div><span>Toronto, ON</span></div>
-
+      <button href="#" class="contact-org btn btn-primary" data-method="post" rel="nofollow">Contact Organizers</button>
     </div>
-
-  <a style="float: right;" href="#" class="big-red-button" data-method="post" rel="nofollow">Contact Organizers</a>
-  <hr>
 <!--   <div id="eventHeader">
     <h1 style="text-align: center;"> Overview</h1>
   </div> -->
@@ -58,25 +55,28 @@
       <h4>Organizers</h4>
       <div class="col-md-4 organizer">
         <a>
-          <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+          <img src="../assets/img/acLogo.jpg">
           <p>A&C Games</p>
         </a>
       </div>
     </div>
 
     <div class="col-md-12 attendees">
-      <span>
+      <div class="attendee-title">
         <h4>Attendees</h4>
-        <a style="float: right;"> View all </a>
-      </span>
-      <div class="col-md-4 attendee">
-        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+        <a class="view-all-link"> View all </a>
       </div>
       <div class="col-md-4 attendee">
-        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+        <img src="../assets/img/helen.gif">
+        <p>Helen</p>
       </div>
       <div class="col-md-4 attendee">
-        <img src="http://qualiadesigns.com/wp-content/uploads/qdi-generic-testimonial-person.png">
+        <img src="../assets/img/mario.gif">
+        <p>Mario</p>
+      </div>
+      <div class="col-md-4 attendee">
+        <img src="../assets/img/joey.gif">
+        <p>Joey</p>
       </div>
     </div>
 
@@ -129,11 +129,10 @@
     <div class="col-md-12 map-container">
       <h4>Location</h4>
       <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
-      <map center="43.6572463, -79.4002505" zoom="15">
+      <!-- <map center="43.6572463, -79.4002505" zoom="15">
         <marker position="[43.6572463, -79.4002505]" />
-        <!-- <shape name="circle" radius="400" center="[43.6572463, -79.4002505]" radius="4000" /> -->
         <control name="overviewMap" opened="true" />
-      </map>
+      </map> -->
     </div>
   </div>
 
