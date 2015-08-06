@@ -15,7 +15,7 @@ GameUpApp.controller('EventDetailsController', ['$scope', '$location', 'eventSer
     return dateOut;
   };
 
-  var clock = $('.your-clock').FlipClock(3620, {
+  var clock = $('.your-clock').FlipClock(86400, {
     // clockFace: 'DailyCounter',
     countdown: true
     // zoom: 0.3
