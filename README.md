@@ -1,10 +1,24 @@
 ## GameUp!
-GameUp! is a multi-sided platform that connects social gamers to game organizers. For gamers, it allows them to discover new events, buy tickets online and enroll in tournaments online. For event organizers, it simplifies creating tournament brackets, provides an online ticketing system and gives them platform to promote their events to a niche market. 
+GameUp! is an online ticketing & event-promotion platform catered towards board & card games.
 
-The major technologies behind GameUp! are:
+### Who is it for?
+GameUp! connects social gamers to game organizers ie. local game stores. <br>
+For gamers, it allows them to discover new events, buy tickets online and enroll in tournaments online. <br>
+For event organizers, it simplifies creating tournament brackets, provides an online ticketing system and gives them platform to promote their events to a niche market.
+
+### Architecture
+The major technologies used in this project are:
 * Parse (NoSQL database)
 * AngularJS (front-end)
 * Stripe (online payment)
 
 ### Demo
-http://GameUp.github.io
+[Live Demo](http://gameup.github.io/#/)
+
+<img src="assets/screenshots/0.png" width="800px" height="400px"> <br><br>
+
+<img src="assets/screenshots/2.png" width="800px" height="400px"> <br><br>
+
+<img src="assets/screenshots/3.png" width="800px" height="400px"> <br><br>
+
+<img src="assets/screenshots/4.png" width="800px" height="400px">
