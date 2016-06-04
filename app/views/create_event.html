@@ -1,0 +1,62 @@
+
+<div class="row">
+  <div class="eight columns centered">
+  <div class="pane">
+    <div class="header">
+      <div class="pane-title">Event Info</div>
+    </div>
+    <div class="body">
+      <div class="row">
+          <div ng-controller="EventController">
+              <div class="panel-body form-horizontal payment-form">
+                  <div class="form-group">
+                      <label for="name" class="col-sm-3 control-label">Event Name</label>
+                      <div class="col-sm-9">
+                          <input ng-model="eventObject.eventname" type="text" class="form-control" id="name" name="name">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="location" class="col-sm-3 control-label">Location</label>
+                      <div class="col-sm-9">
+                          <input ng-model="eventObject.eventlocation" type="text" class="form-control" id="location" name="location">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="price" class="col-sm-3 control-label">Price</label>
+                      <div class="col-sm-9">
+                          <input ng-model="eventObject.eventprice" type="number" class="form-control" id="price" name="price">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="game" class="col-sm-3 control-label">Game</label>
+                      <div class="col-sm-9">
+                          <select ng-model="eventObject.eventgame" ng-options="gameObjectEntry.gameObject.attributes.Name for gameObjectEntry in allGameObjects" class="form-control" id="game" name="game" required>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="date" class="col-sm-3 control-label">Date</label>
+                      <div class="col-sm-4">
+                          <input ng-model="eventObject.eventdate" type="date" class="form-control" id="date" name="date">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="time" class="col-sm-3 control-label">Time</label>
+                      <div class="col-sm-4">
+                          <input ng-model="eventObject.eventtime" type="time" class="form-control" id="time" name="time">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="description" class="col-sm-3 control-label">Description</label>
+                      <div class="col-sm-9">
+                          <textarea ng-model="eventObject.eventdescription" rows="6" cols="50"></textarea>
+                      </div>
+                  </div>
+                  <p><button ng-click="createEvent(eventObject)">Submit</button></p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

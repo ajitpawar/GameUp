@@ -1,0 +1,142 @@
+<!-- <!DOCTYPE html> -->
+<html ng-app="GameUpApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GameUp!</title>
+  <link href="assets/img/favicon.png" rel="shortcut icon">
+
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- For tournament brackets -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/gracket.js"></script>
+  <link href="assets/css/gracket.css" rel="stylesheet" type="text/css">
+
+  <link href="http://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
+  <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
+
+
+  <link href="assets/css/login.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+  <!-- <link href="assets/css/gracket.css" rel="stylesheet" type="text/css"> -->
+
+  <link href="assets/css/extrastyles.css" media="screen" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div class="main-wrapper">
+  <nav ng-controller="NavbarController" class="top-nav">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="name">
+          <a class="brand" href="#/home">
+            <img class="nav-logo" src="../assets/img/gameuplogo.png">
+          </a>
+        </div>
+        <ul class="nav left">
+          <li ng-if="isAuthenticated()" class ="nav-item"><a href="#/profile">Profile</a></li>
+          <li class="nav-item"><a href="#/events">Events</a></li>
+          <li class="nav-item"><a href="#/bracket">Tournaments</a></li>
+        </ul>
+<!--         <ul class="nav right">
+          <li class="nav-item desktop-visible">
+            <input class="search" placeholder="Search">
+            <i class="icon icon-search"></i>
+          </li>
+ -->        <ul class="nav right">
+          <li class="nav-item">
+            <button class="nav-create-btn btn btn-primary"><a href="#/create_event" style="color: white;">Create Event</a></button>
+          </li>
+          <li ng-if="!isAuthenticated()" class="nav-item">
+            <a class="login-link" href="#/login">
+              <div class="icon icon-user round-button"></div>
+              sign in
+            </a>
+          </li>
+          <li ng-if="isAuthenticated()" class="nav-item">
+            <a href="#/home" ng-click="logOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--
+<div ng-controller="NavbarController" class="navbar navbar-default navbar-static-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#/"><i class="ion-ios7-pulse-strong"></i> GameUp!</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="#/home">Home</a></li>
+    <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li>
+    <li><a href="#/create_event">Create</a></li>
+    <li><a href="#/events">Events</a></li>
+  </ul>
+  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/signup">Sign up</a></li>
+  </ul>
+  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+    <li><a href="#" ng-click="logOut()">Logout</a></li>
+  </ul>
+</div>
+-->
+
+<div ng-view></div>
+
+<div id="footer" style="height: auto;">
+  <img class="foot-logo" src="../assets/img/gameuplogo.png">
+  <div class="foot-nav-container">
+    <span class="foot-nav">Host</span>
+    <span class="foot-nav">Support</span>
+    <span class="foot-nav">About</span>
+    <span class="foot-nav">Privacy</span>
+  </div>
+  <p>© 2015 GameUp</p>
+</div>
+
+</div>
+
+
+<!-- angular -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-route.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-messages.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-resource.min.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular-animate.min.js"></script>
+
+
+<!-- 3rd party -->
+<script src="vendor/parse-angular.js"></script>
+<script src="//www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+<script src="https://maps.google.com/maps/api/js"></script>
+<script src="http://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+<link rel="stylesheet" href="/assets/css/flipclock.css">
+<script src="/assets/js/flipclock.min.js"></script>
+
+
+<!-- code -->
+<script src="app/app.js"></script>
+
+<!-- Services -->
+<script src="app/services/events.js"></script>
+
+<!-- Controllers -->
+<script src="app/controllers/HomeController.js"></script>
+<script src="app/controllers/NavbarController.js"></script>
+<script src="app/controllers/EventController.js"></script>
+<script src="app/controllers/EventDetailsController.js"></script>
+<script src="app/controllers/ListEventsController.js"></script>
+<script src="app/controllers/LoginController.js"></script>
+<script src="app/controllers/SignupController.js"></script>
+<script src="app/controllers/ProfileController.js"></script>
+<script src="app/controllers/BracketController.js"></script>
+
+
+</body>
+</html>

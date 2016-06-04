@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "_default": {
+      "link": "GameUp"
+    },
+    "GameUp": {
+      "applicationId": "gtqTs8Mqc9MdXtS8UiFWBIhcxCjAS1SVwuMwnl26",
+      "masterKey": "SKD5qj5wBnfiDaou6gW4dKsHBjY0bNCRVqqJHANF"
+    }
+  }
+}

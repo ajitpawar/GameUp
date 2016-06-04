@@ -1,0 +1,165 @@
+<div id="events-directory">
+  <div class="blue-bg">
+    <div class="hero events-hero" style="background-color:#25201f;">
+      <div class="row">
+        <div class="twelve columns centered">
+          <div class="intro type-centered">
+            <div class="title type-caps no-border">Featured Gaming Events</div>
+          </div>
+        </div>
+      </div>
+        <section id="speakers" class="row">
+            <div class="three columns">
+                <div class="speaker-item animated fadeInUp visible" data-animation="fadeInUp" data-delay="0">
+                    <div class="img-wrapper">
+                        <img src="assets/img/gamescom-logo.png" class="img-responsive img-circle" alt="speaker-1">
+                    </div>
+                    <div class="name">Gamescom</div>
+                    <div class="sub">San Francisco, CA</div>
+                    <p class="small">Gamescom is the largest trade fair and event highlight for interactive games</p>
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="speaker-item animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                    <div class="img-wrapper">
+                        <img src="assets/img/paxlogo.png" class="img-responsive img-circle" alt="speaker-2">
+                    </div>
+                    <div class="name">PAX Prime</div>
+                    <div class="sub">Seattle, WA</div>
+                    <p class="small">Ranging from hardcore to casual, we have games for all gamer types and skill levels</p>
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="speaker-item animated fadeInUp visible" data-animation="fadeInUp" data-delay="1000">
+                    <div class="img-wrapper">
+                        <img src="assets/img/goplay.png" class="img-responsive img-circle" alt="speaker-3">
+                    </div>
+                    <div class="name">GoPlay</div>
+                    <div class="sub">Indianapolis, IN</div>
+                    <p class="small">Go Play NW is an annual RPG weekend for indie, role-playing, story and board/card games</p>
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="speaker-item animated fadeInUp visible" data-animation="fadeInUp" data-delay="1500">
+                    <div class="img-wrapper">
+                        <img src="assets/img/gencon.png" class="img-responsive img-circle" alt="speaker-4">
+                    </div>
+                    <div class="name">Gen Con</div>
+                    <div class="sub">Seattle, WA</div>
+                    <p class="small">Gen Con is the longest-running gaming convention in the world with 14k events</p>
+                </div>
+            </div>
+        </section>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="three columns">
+        <div class="event-filters">
+          <form accept-charset="UTF-8" action="#/events" data-remote="true" data-target=".directory" id="eventFilters" method="get">
+            <div style="margin:0;padding:0;display:inline">
+              <input name="utf8" type="hidden" value="✓">
+            </div>
+            <div class="row">
+              <div class="input-group">
+                <input class="search" id="term" name="term" placeholder="Search Gaming Events" type="text">
+              </div>
+              <h4 class="near-location">near</h4>
+            </div>
+            <div class="row">
+              <div class="input-group">
+                <input id="location" name="location" placeholder="Location" type="text">
+              </div>
+              <div class="hidden" style="margin:0; padding:0; visibility:hidden; position:absolute;">
+                <input name="commit" type="submit" value="filter">
+              </div>
+            </div>
+            <div class="row">
+              <h4>Date</h4>
+              <label>
+                <input checked="checked" data-submit-on="change" data-target="#eventFilters" id="time__" name="time" type="radio" value=" ">
+                Upcoming
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_this_week" name="time" type="radio" value="this_week">
+                This Week
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_next_30_days" name="time" type="radio" value="next_30_days">
+                30 Days
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_next_90_days" name="time" type="radio" value="next_90_days">
+                90 Days
+              </label>
+              <label>
+                <input data-submit-on="change" data-target="#eventFilters" id="time_past" name="time" type="radio" value="past">
+                Past
+              </label>
+            </div>
+            <div class="row">
+              <h4>Game</h4>
+              <div class="select2-container" id="s2id_event-tag-select">
+                <a href="#" onclick="return false;" class="select2-choice">   <span>All Games</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a>    <div class="select2-drop select2-offscreen">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div>
+              </div>
+              <select ng-model="eventObject.eventgame" ng-options="game.gameTitle for game in allGames" class="form-control" id="game" name="game" data-submit-on="change" data-target="#eventFilters" id="event-tag-select" name="tag" style="display: none;">
+              </select>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="nine columns">
+        <div class="directory">
+          <div class="event-results">
+            <div class="events-teasers">
+                <div class="event-teaser" ng-repeat="obj in eventList[0] | filter:search">
+                  <div class="two columns time">
+                    <i class="icon-time"></i>
+                    &nbsp;
+                    {{obj.attributes.eventDate | date: 'shortDate'}}
+                  </div>
+                  <div class="one columns logo">
+                    <i class="fa fa-gamepad fa-2x"></i>
+                  </div>
+                  <div class="seven columns description">
+                    <h4><a ng-href="#/events/{{obj.id}}">{{obj.attributes.eventName}}</a></h4>
+                    <h5>{{obj.attributes.eventDescription}}</h5>
+                  </div>
+                  <div class="two columns location">
+                    <i class="icon-map-marker"></i>
+                      &nbsp;
+                      {{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}
+                  </div>
+                </div>
+                    <span id="page_2"><a href="/events?page=2" class="button twelve secondary radius" data-remote="true" data-target="#page_2">More</a></span>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<!-- <div class='event-container container-fluid'>
+
+  <div class="event-search input-group">
+    <span class="input-group-addon" id="basic-addon1">Filter</span>
+    <input ng-model="search" type="text" class="form-control" placeholder="Search here" aria-describedby="basic-addon1">
+  </div>
+
+  <div class= "event col-md-8 col-md-offset-2" ng-repeat="obj in eventList[0] | filter:search" ng-click="openDetail(obj)">
+      <h3>{{obj.attributes.eventName}}</h3>
+      <div class="event-detail">
+        <i class="fa fa-gamepad fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventGame != null ? obj.attributes.eventGame : "Magic"}}</span> <i class="fa fa-map-marker fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</span>
+      </div>
+      <div class="event-detail">
+        <i class="fa fa-calendar-o fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventDate != null ? obj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span> <i class="fa fa-money fa-2x"></i> <span class="event-detail-text">{{obj.attributes.eventPrice != null ? "$" + obj.attributes.eventPrice : "Free"}}</span>
+      </div>
+      <p>{{obj.attributes.eventDescription != null ? obj.attributes.eventDescription : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}</p>
+  </div>
+
+</div> -->

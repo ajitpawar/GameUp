@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="twelve columns">
+    <script type="text/javascript">
+    $(function() {
+      if(!_kmq) {
+        window._kmq = [];
+        var _kmq = window._kmq;
+      }
+      _kmq.push(['record','viewed login', {}]);
+    });
+    </script>
+
+    <form method="post" ng-submit="login()" name="loginForm" class="simple_form form-horizontal" id="new_user_session">
+      <div class="row">
+        <div class="twelve columns">
+          <h2 class="section-title">
+            Login to GameUp
+            <hr>
+          </h2>
+        </div>
+      </div>
+    <div class="row">
+      <div class="six columns">
+        <div class="pane">
+          <div class="header">
+            <div class="pane-title">
+              Username
+            </div>
+          </div>
+          <div class="body">
+            <div class="input string optional user_session_login">
+              <input class="form-control input-lg" type="text" name="username" ng-model="username" placeholder="Username" required autofocus>
+            </div>
+            <div class="input password optional user_session_password">
+              <input class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="left">
+              <button type="submit" ng-disabled="loginForm.$invalid" class="button radius button radius">Log in</button>
+            </div>
+            <div class="right">
+              <a href="#/" class="button secondary radius">Forgot Password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="six columns">
+        <section>
+          <div class="row">
+            <div class="twelve columns">
+              <div class="pane">
+                <div class="header">
+                  <div class="pane-title">Social</div>
+                </div>
+                <div class="body">
+                  <ul class="button-group radius">
+                    <li>
+                      <a class="button secondary" href="/auth/facebook">
+                        <i class="icon-facebook-sign"></i>
+                        Facebook
+                      </a>
+                    </li>
+                    <li>
+                      <a class="button secondary" href="/auth/twitter">
+                        <i class="icon-twitter-sign"></i>
+                        Twitter
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="twelve columns">
+              <div class="pane">
+                <div class="header">
+                  <div class="pane-title">
+                    Need an acccount?
+                    <a href="#/signup">Signup</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </form>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

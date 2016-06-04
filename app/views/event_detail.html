@@ -1,0 +1,140 @@
+<div class="container-fluid event-detail-container">
+
+  <div class="col-md-12 header">
+    <div class="banner">
+      <!-- <img src="http://inwallspeakers1.com/wp-content/uploads/2014/10/dr-dre-beats-logo.png"> -->
+      <img src="assets/img/acLogo.jpg">
+    </div>
+    <div class="detail">
+      <h2>{{eventObj.attributes.eventName}}</h2>
+      <div><span>{{eventObj.attributes.eventDate != null ? eventObj.attributes.eventDate.toDateString() : "Sunday July 5th 2015"}}</span><span>6:30PM EDT</span></div>
+      <div><span>Toronto, ON</span></div>
+      <button href="#" class="contact-org btn btn-primary" data-method="post" rel="nofollow">Contact Organizers</button>
+    </div>
+<!--   <div id="eventHeader">
+    <h1 style="text-align: center;"> Overview</h1>
+  </div> -->
+  <!-- <div id="tabs">
+    <div class="row">
+      <button id="drop-down" onclick="jQuery(&quot;#tabs ul.tab-list&quot;).slideToggle()"></button>
+      <ul class="tab-list">
+        <li class="active" id="tab_show">
+          <a href="#">Overview</a>
+        </li>
+        <li id="tab_schedules">
+          <a href="#">Schedule</a>
+        </li>
+        <li id="tab_rules">
+          <a href="#">Rules</a>
+        </li>
+        <li id="contact_organizer_btn"><a href="#" class="big-red-button" data-method="post" rel="nofollow">Contact Organizers</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+
+  </div>
+  <div class="col-md-12 buy-tickets">
+    <div ng-if="eventObj.attributes.eventPrice != 0">
+      <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Tickets (${{eventObj.attributes.eventPrice}})</button>
+    </div>
+  </div>
+
+  <div class="col-md-4 sidebar">
+    <div ng-if="eventObj.attributes.eventPrice == 0">
+      <button class="btn btn-primary" type="submit" ng-click="joinEvent()">Join Event</button>
+    </div>
+<!--     <div ng-if="eventObj.attributes.eventPrice != 0">
+      <button class="btn btn-primary" type="submit" ng-click="chargeStripeCardOfUser()">Buy Ticket (${{eventObj.attributes.eventPrice}})</button>
+    </div> -->
+    <div class="col-md-12 timeToEvent">
+      <h4> Time to event</h4>
+      <div class="your-clock"></div>
+    </div>
+    <div class="col-md-12 organizers">
+      <h4>Organizers</h4>
+      <div class="col-md-4 organizer">
+        <a>
+          <img src="../assets/img/acLogo.jpg">
+          <p>A&C Games</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-12 attendees">
+      <div class="attendee-title">
+        <h4>Attendees</h4>
+        <a class="view-all-link"> View all </a>
+      </div>
+      <div class="col-md-4 attendee">
+        <img src="../assets/img/helen.gif">
+        <p>Helen</p>
+      </div>
+      <div class="col-md-4 attendee">
+        <img src="../assets/img/mario.gif">
+        <p>Mario</p>
+      </div>
+      <div class="col-md-4 attendee">
+        <img src="../assets/img/joey.gif">
+        <p>Joey</p>
+      </div>
+    </div>
+
+    <div class="col-md-12 games">
+      <h4>Games</h4>
+      <div class="col-md-4 game">
+        <img src="http://orig13.deviantart.net/73c9/f/2011/313/b/8/magic_the_gathering_b6_dj_fahr_by_dj_fahr-d4flanz.png">
+        <p>Magic</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 event-detail">
+    <div class="col-md-12 about">
+      <h4>About this event</h4>
+      <p>{{eventObj.attributes.eventDescription}}.</p>
+    </div>
+
+    <div class="col-md-12 schedule">
+      <h4>Schedule</h4>
+      <span>
+        <h5 style="text-indent:25px;"> Friday </h5>
+        <p>6:30 pm – Doors open and registration begins</p>
+        <p>6:45 pm – First round players take their seats</p>
+        <p>7:00pm – First tournament match begins<p>
+        <p>7:00pm - 8:00 pm – Tournament games continue</p>
+        <p>8:15 pm - Semi-Final tournament game played</p>
+        <p>8:30 pm - Final tournament game played</p>
+        <p>8:45 pm - Prizes awarded </p>
+        <p>9:00 pm – Refreshments </p>
+        <p>9:30 pm - Store closing </p>
+      </span>
+    </div>
+
+    <div class="col-md-12 prizes">
+      <h4>Prizes</h4>
+      <span>
+        <p>1st place – Rare magic the gathering booster pack</p>
+        <p>2nd place - $50 gift certificate</p>
+        <p>3rd place - $25 gift certificate</p>
+      </span>
+    </div>
+
+    <div class="col-md-12 rules">
+      <h4>Rules</h4>
+      <span>
+        <p>Bring your best deck – No elemental cards allowed.</p>
+      </span>
+    </div>
+    <div class="col-md-12 map-container">
+      <h4>Location</h4>
+      <p>{{obj.attributes.eventLocation != null ? obj.attributes.eventLocation : "A&C Games"}}</p>
+      <map center="43.6572463, -79.4002505" zoom="15">
+        <marker position="[43.6572463, -79.4002505]" />
+        <control name="overviewMap" opened="true" />
+      </map>
+    </div>
+  </div>
+
+</div>
+
