@@ -14,19 +14,24 @@ GameUp is an online ticketing & event-promotion platform for board & card games.
 Our pitch deck can be seen [online](https://dl.dropboxusercontent.com/u/111181899/pitch_deck.pdf)
 
 ### Demo
-[~~Live Demo~~]()
+[~~Live Demo~~]()<br>
+*Note: Parse.com was acquired by Facebook and shutdown in 2016. As such, the demo will no longer work and has been removed.*
 
-*Note: Parse.com was acquired by Facebook and shutdown in 2015. As such, the demo will no longer work.*
-
+<br>
 ### Screenshots
 * Landing page
-![alt text](assets/screenshots/0.png)
+![alt text](assets/screenshots/0.png) 
+<br>
+
 * Event page
-![alt text](assets/screenshots/2.png)
+![alt text](assets/screenshots/2.png) 
+<br>
+
 * Tournament brackets
-![alt text](assets/screenshots/4.png)
+![alt text](assets/screenshots/4.png) 
+<br>
 
-
+<br><br>
 ### Target Audience
 GameUp is for gamers who play card & board games socially.
 
@@ -37,6 +42,3 @@ GameUp is for gamers who play card & board games socially.
 
 ### Competitors
 ![](assets/screenshots/competition.png)
-
-### Competitive Analysis
-![](assets/screenshots/competitive_analysis.png)
